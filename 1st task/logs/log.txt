@@ -1,0 +1,70 @@
+2021-03-25 12:18:00 [main] DEBUG ArrayAverageTest- this is log debug
+2021-03-25 12:18:00 [main] INFO  ArrayAverageTest- this is log info
+2021-03-25 12:18:00 [main] ERROR ArrayAverageTest- this is log error
+2021-03-25 12:18:00 [main] FATAL ArrayAverageTest- this is log fatal
+2021-03-25 12:32:47 [main] DEBUG ArrayAverageTest- this is log debug
+2021-03-25 12:32:47 [main] INFO  ArrayAverageTest- this is log info
+2021-03-25 12:32:47 [main] ERROR ArrayAverageTest- this is log error
+2021-03-25 12:32:47 [main] FATAL ArrayAverageTest- this is log fatal
+2021-03-25 13:25:45 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- Min value of array: 0
+Max value of array: 9
+2021-03-25 13:27:03 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+
+2021-03-25 13:27:03 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-03-25 13:54:33 [main] DEBUG ArrayAverageTest- this is log debug
+2021-03-25 13:54:33 [main] INFO  ArrayAverageTest- this is log info
+2021-03-25 13:54:33 [main] ERROR ArrayAverageTest- this is log error
+2021-03-25 13:54:33 [main] FATAL ArrayAverageTest- this is log fatal
+2021-03-25 13:54:33 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 13:54:33 [main] DEBUG by.kirill.array.service.FindArrayAverageService- Array is empty
+2021-03-25 13:54:49 [main] DEBUG ArrayAverageTest- this is log debug
+2021-03-25 13:54:49 [main] INFO  ArrayAverageTest- this is log info
+2021-03-25 13:54:49 [main] ERROR ArrayAverageTest- this is log error
+2021-03-25 13:54:49 [main] FATAL ArrayAverageTest- this is log fatal
+2021-03-25 13:54:49 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 13:57:58 [main] DEBUG ArrayAverageTest- this is log debug
+2021-03-25 13:57:58 [main] INFO  ArrayAverageTest- this is log info
+2021-03-25 13:57:58 [main] ERROR ArrayAverageTest- this is log error
+2021-03-25 13:57:58 [main] FATAL ArrayAverageTest- this is log fatal
+2021-03-25 13:57:58 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 13:58:13 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 13:58:17 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-03-25 13:58:17 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-03-25 13:58:20 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-03-25 13:58:20 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-03-25 13:58:20 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-03-25 13:58:20 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: -4
+Max value of array: 4
+2021-03-25 13:58:26 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in countOfPositiveNegativeElements method
+2021-03-25 13:58:26 [main] INFO  by.kirill.array.service.FindPosNegCountService- 
+Count of positive array numbers: 9
+Count of negative array numbers: 0
+2021-03-25 13:58:26 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in countOfPositiveNegativeElements method
+2021-03-25 13:58:26 [main] INFO  by.kirill.array.service.FindPosNegCountService- 
+Count of positive array numbers: 4
+Count of negative array numbers: 4
+2021-03-25 13:58:30 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-03-25 13:58:30 [main] INFO  by.kirill.array.service.ArrayReplaceService- 
+replaceNumbers method finished successfully
+2021-03-25 13:58:38 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-03-25 13:58:38 [main] INFO  by.kirill.array.service.ArraySumService- 
+sum of array elements: 45
+2021-03-25 13:58:38 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-03-25 13:58:38 [main] ERROR by.kirill.array.service.ArraySumService- Error in findSum method execution 
+2021-03-25 13:59:27 [main] DEBUG ArrayAverageTest- this is log debug
+2021-03-25 13:59:27 [main] INFO  ArrayAverageTest- this is log info
+2021-03-25 13:59:27 [main] ERROR ArrayAverageTest- this is log error
+2021-03-25 13:59:27 [main] FATAL ArrayAverageTest- this is log fatal
+2021-03-25 13:59:27 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 14:00:18 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 14:01:18 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 14:01:18 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-03-25 14:01:18 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-25 14:01:18 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
