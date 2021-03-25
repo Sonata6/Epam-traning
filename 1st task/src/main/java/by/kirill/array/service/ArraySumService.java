@@ -12,7 +12,7 @@ public class ArraySumService  {
     {
         logger.log(Level.DEBUG, "in findSum method");
         if(arr.getArray().length == 0){
-            logger.log(Level.DEBUG, "Array is empty");
+            throw new IllegalArgumentException();
         }
         long sum = 0;
         for(int i = 0; i < arr.getArray().length; i++){

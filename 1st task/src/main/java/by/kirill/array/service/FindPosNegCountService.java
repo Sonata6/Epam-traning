@@ -13,7 +13,7 @@ public class FindPosNegCountService {
     public ArrayPosNegCount countOfPositiveNegativeElements(CustomArray arr){
         logger.log(Level.DEBUG, "in countOfPositiveNegativeElements method");
         if(arr.getArray().length == 0){
-            logger.log(Level.DEBUG, "Array is empty");
+            throw new IllegalArgumentException();
         }
         int posnumber = 0;
         int negnumber = 0;

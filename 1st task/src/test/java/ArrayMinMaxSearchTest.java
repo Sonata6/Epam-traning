@@ -13,7 +13,6 @@ public class ArrayMinMaxSearchTest {
         CustomArray myarray = new CustomArray(arr);
         ArrayMinMaxSearchService search = new ArrayMinMaxSearchService();
         ArrayMinMax a = search.minMaxFind(myarray);
-        Assert.assertEquals(0, a.getMin());
         Assert.assertEquals(9, a.getMax());
     }
 
@@ -24,7 +23,15 @@ public class ArrayMinMaxSearchTest {
         ArrayMinMaxSearchService search = new ArrayMinMaxSearchService();
         ArrayMinMax a = search.minMaxFind(myarray);
         Assert.assertEquals(-4, a.getMin());
-        Assert.assertEquals(4, a.getMax());
     }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void zeroArrayLenghtTest(){
+        int arr[] = {};
+        CustomArray myarray = new CustomArray(arr);
+        ArrayMinMaxSearchService search = new ArrayMinMaxSearchService();
+        ArrayMinMax a = search.minMaxFind(myarray);
+    }
+
 
 }

@@ -3,8 +3,6 @@ import by.kirill.array.entity.CustomArray;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 
-import java.util.logging.Logger;
-
 public class FindArrayAverageService {
 
     private static org.apache.logging.log4j.Logger logger = LogManager.getLogger();
@@ -13,7 +11,7 @@ public class FindArrayAverageService {
     {
         logger.log(Level.DEBUG, "in findAverage method");
         if(a.getArray().length == 0){
-            logger.log(Level.DEBUG, "Array is empty");
+            throw new IllegalArgumentException();
         }
         long sum = 0;
         float average;

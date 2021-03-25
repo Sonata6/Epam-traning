@@ -1,14 +1,10 @@
 import by.kirill.array.entity.CustomArray;
 import by.kirill.array.service.FindArrayAverageService;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ArrayAverageTest {
 
-    private static Logger logger = LogManager.getLogger();
 
     @Test
     public void checkAverageEqualsTest1() {
@@ -28,7 +24,14 @@ public class ArrayAverageTest {
         CustomArray a = new CustomArray(arr);
         float average = datacount.findAverage(a);
         Assert.assertNotEquals(1, average);
+    }
 
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void zeroArrayLenghtTest(){
+        int arr[] = {};
+        FindArrayAverageService datacount = new FindArrayAverageService();
+        CustomArray myarray = new CustomArray(arr);
+        datacount.findAverage(myarray);
     }
 
 }

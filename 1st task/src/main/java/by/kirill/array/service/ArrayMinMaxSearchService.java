@@ -15,7 +15,7 @@ public class ArrayMinMaxSearchService {
         //MapMessage mapMessage = new MapMessage().with("\nId", "LogMapMessageMain");
         logger.log(Level.DEBUG, "in minMaxFind method");
         if(a.getArray().length == 0){
-            logger.log(Level.DEBUG, "Array is empty");
+            throw new IllegalArgumentException();
         }
         int min = a.getArray()[0];
         int max = a.getArray()[0];

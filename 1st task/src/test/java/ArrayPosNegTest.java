@@ -12,7 +12,6 @@ public class ArrayPosNegTest {
         FindPosNegCountService find = new FindPosNegCountService();
         CustomArray myarray = new CustomArray(arr);
         ArrayPosNegCount a =  find.countOfPositiveNegativeElements(myarray);
-        Assert.assertEquals(0, a.getNegative());
         Assert.assertEquals(9, a.getPositive());
     }
 
@@ -23,7 +22,14 @@ public class ArrayPosNegTest {
         CustomArray myarray = new CustomArray(arr);
         ArrayPosNegCount a =  find.countOfPositiveNegativeElements(myarray);
         Assert.assertEquals(4, a.getNegative());
-        Assert.assertEquals(4, a.getPositive());
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void zeroArrayLenghtTest(){
+        int arr[] = {};
+        FindPosNegCountService find = new FindPosNegCountService();
+        CustomArray myarray = new CustomArray(arr);
+        ArrayPosNegCount a =  find.countOfPositiveNegativeElements(myarray);
     }
 
 }

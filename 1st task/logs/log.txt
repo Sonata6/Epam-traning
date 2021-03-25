@@ -68,3 +68,12 @@ sum of array elements: 45
 2021-03-25 14:01:18 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
 2021-03-25 14:01:18 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
 2021-03-25 14:01:18 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-03-25 16:09:27 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-03-25 16:11:57 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-03-25 16:12:48 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in countOfPositiveNegativeElements method
+2021-03-25 16:13:23 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-03-25 16:14:06 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-03-25 16:14:06 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-03-25 16:14:06 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-03-25 16:14:06 [main] ERROR by.kirill.array.service.ArraySumService- Error in findSum method execution 
+2021-03-25 16:14:06 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method

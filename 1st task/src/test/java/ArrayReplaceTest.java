@@ -26,4 +26,12 @@ public class ArrayReplaceTest {
         Assert.assertEquals(replacedarray, myarray.getArray());
     }
 
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void zeroArrayLenghtTest(){
+        int arr[] = {};
+        CustomArray myarray = new CustomArray(arr);
+        ArrayReplaceService replace = new ArrayReplaceService();
+        replace.replaceNumbers(myarray);
+    }
+
 }
