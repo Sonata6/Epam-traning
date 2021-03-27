@@ -16,7 +16,7 @@ public class ArrayReplaceService{
         }
         for(int i = 0; i<arr.getArray().length; i++){
             if(arr.getArray()[i] < 0){
-                arr.setArray(i, -1);
+                arr.setElement(i, -1);
             }
         }
         logger.log(Level.INFO, "replaceNumbers method finished successfully");

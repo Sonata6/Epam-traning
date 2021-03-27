@@ -7,31 +7,30 @@ public class ArrayReplaceTest {
 
     @Test
     public void checkAverageEqualsTest1() {
-        int replacedarray[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,0};
+        int expected[] = {-1,-1,-1,-1,-1,-1,-1,-1,-1,0};
         int arr[] = {-9,-8,-7,-6,-5,-4,-3,-2,-1,0};
-        CustomArray myarray = new CustomArray(arr);
+        CustomArray actual = new CustomArray(arr);
         ArrayReplaceService replace = new ArrayReplaceService();
-        replace.replaceNumbers(myarray);
-        Assert.assertEquals(replacedarray, myarray.getArray());
-
+        replace.replaceNumbers(actual);
+        Assert.assertEquals(expected, actual.getArray());
     }
 
     @Test
     public void checkAverageNotEqualsTest(){
-        int replacedarray[] = {-1,-1,-1,-1, 0, 1, 2, 3, 4};
+        int expected[] = {-1,-1,-1,-1, 0, 1, 2, 3, 4};
         int arr[] = {-4, -3, -2, -1, 0, 1, 2, 3, 4};
-        CustomArray myarray = new CustomArray(arr);
+        CustomArray actual = new CustomArray(arr);
         ArrayReplaceService replace = new ArrayReplaceService();
-        replace.replaceNumbers(myarray);
-        Assert.assertEquals(replacedarray, myarray.getArray());
+        replace.replaceNumbers(actual);
+        Assert.assertEquals(expected, actual.getArray());
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void zeroArrayLenghtTest(){
         int arr[] = {};
-        CustomArray myarray = new CustomArray(arr);
+        CustomArray actual = new CustomArray(arr);
         ArrayReplaceService replace = new ArrayReplaceService();
-        replace.replaceNumbers(myarray);
+        replace.replaceNumbers(actual);
     }
 
 }

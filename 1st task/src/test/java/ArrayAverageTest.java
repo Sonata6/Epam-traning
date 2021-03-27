@@ -11,8 +11,8 @@ public class ArrayAverageTest {
 
         int arr[] = {0,1,2,3,4,5,6,7,8,9};
         FindArrayAverageService datacount = new FindArrayAverageService();
-        CustomArray a = new CustomArray(arr);
-        float average = datacount.findAverage(a);
+        CustomArray actual = new CustomArray(arr);
+        float average = datacount.findAverage(actual);
         Assert.assertEquals(4.5, average);
 
     }
@@ -21,8 +21,8 @@ public class ArrayAverageTest {
     public void checkAverageNotEqualsTest(){
         int arr[] = {-4, -3, -2, -1, 0, 1, 2, 3, 4};
         FindArrayAverageService datacount = new FindArrayAverageService();
-        CustomArray a = new CustomArray(arr);
-        float average = datacount.findAverage(a);
+        CustomArray actual = new CustomArray(arr);
+        float average = datacount.findAverage(actual);
         Assert.assertNotEquals(1, average);
     }
 
@@ -30,8 +30,8 @@ public class ArrayAverageTest {
     public void zeroArrayLenghtTest(){
         int arr[] = {};
         FindArrayAverageService datacount = new FindArrayAverageService();
-        CustomArray myarray = new CustomArray(arr);
-        datacount.findAverage(myarray);
+        CustomArray actual = new CustomArray(arr);
+        datacount.findAverage(actual);
     }
 
 }

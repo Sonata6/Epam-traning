@@ -10,26 +10,26 @@ public class ArrayPosNegTest {
     public void checkAverageEqualsTest1() {
         int arr[] = {0,1,2,3,4,5,6,7,8,9};
         FindPosNegCountService find = new FindPosNegCountService();
-        CustomArray myarray = new CustomArray(arr);
-        ArrayPosNegCount a =  find.countOfPositiveNegativeElements(myarray);
-        Assert.assertEquals(9, a.getPositive());
+        CustomArray customarray = new CustomArray(arr);
+        ArrayPosNegCount posnegcount =  find.countOfPositiveNegativeElements(customarray);
+        Assert.assertEquals(9, posnegcount.getPositive());
     }
 
     @Test
     public void checkAverageNotEqualsTest(){
         int arr[] = {-4, -3, -2, -1, 0, 1, 2, 3, 4};
         FindPosNegCountService find = new FindPosNegCountService();
-        CustomArray myarray = new CustomArray(arr);
-        ArrayPosNegCount a =  find.countOfPositiveNegativeElements(myarray);
-        Assert.assertEquals(4, a.getNegative());
+        CustomArray customarray = new CustomArray(arr);
+        ArrayPosNegCount posnegcount =  find.countOfPositiveNegativeElements(customarray);
+        Assert.assertEquals(4, posnegcount.getNegative());
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void zeroArrayLenghtTest(){
         int arr[] = {};
         FindPosNegCountService find = new FindPosNegCountService();
-        CustomArray myarray = new CustomArray(arr);
-        ArrayPosNegCount a =  find.countOfPositiveNegativeElements(myarray);
+        CustomArray actual = new CustomArray(arr);
+        find.countOfPositiveNegativeElements(actual);
     }
 
 }
