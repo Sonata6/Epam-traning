@@ -86,3 +86,36 @@ sum of array elements: 45
 2021-03-26 15:30:51 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
 2021-03-26 15:30:51 [main] INFO  by.kirill.array.service.ArrayReplaceService- replaceNumbers method finished successfully
 2021-03-26 15:30:51 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-03-27 20:42:59 [main] INFO  by.kirill.array.creator.CustomArrayCreator- null
+2021-03-27 20:43:33 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 1-4-5-14
+2021-03-27 20:43:49 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 1 4 5 14
+2021-03-27 20:44:09 [main] INFO  by.kirill.array.creator.CustomArrayCreator- -1 4 5 14
+2021-03-27 20:48:46 [main] INFO  by.kirill.array.creator.CustomArrayCreator- null
+2021-03-27 21:25:17 [main] INFO  by.kirill.array.creator.CustomArrayCreator- null
+2021-03-27 21:26:25 [main] INFO  by.kirill.array.creator.CustomArrayCreator- null
+2021-03-27 21:27:11 [main] INFO  by.kirill.array.creator.CustomArrayCreator- null
+2021-03-27 21:28:22 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:30:32 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:30:36 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:31:16 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:42:34 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:44:36 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:45:06 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 1013 
+2021-03-27 21:45:06 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 7 
+2021-03-27 21:45:06 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 14 
+2021-03-27 21:45:50 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14-7-113
+2021-03-27 21:45:50 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 113 
+2021-03-27 21:45:50 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 7 
+2021-03-27 21:45:50 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 14 
+2021-03-27 21:46:21 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14 7 113
+2021-03-27 21:46:21 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 113 
+2021-03-27 21:46:21 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 7 
+2021-03-27 21:46:21 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 14 
+2021-03-27 21:46:33 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14,7,113
+2021-03-27 21:46:33 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 113 
+2021-03-27 21:46:33 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 7 
+2021-03-27 21:46:33 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 14 
+2021-03-27 21:47:43 [main] INFO  by.kirill.array.creator.CustomArrayCreator- 14,7,113
+2021-03-27 21:47:43 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 14 
+2021-03-27 21:47:43 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 7 
+2021-03-27 21:47:43 [main] DEBUG by.kirill.array.creator.CustomArrayCreator- 113 

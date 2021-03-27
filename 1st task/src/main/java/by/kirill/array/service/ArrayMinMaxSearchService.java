@@ -32,9 +32,9 @@ public class ArrayMinMaxSearchService {
         }else {
             logger.log(Level.INFO, String.format("\nMin value of array: %d\nMax value of array: %d", min, max));
         }
-        ArrayMinMax minmax = new ArrayMinMax(min, max);
+        ArrayMinMax minmaxcount = new ArrayMinMax(min, max);
 
-        return minmax;
+        return minmaxcount;
     }
 
 }
