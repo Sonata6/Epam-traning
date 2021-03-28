@@ -1,0 +1,17 @@
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method

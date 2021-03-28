@@ -19,29 +19,33 @@ public class CustomArrayReader {
 
     private static Logger logger = LogManager.getLogger();
 
-    public String readFromFile(String filepath) throws CustomArrayException {
+    public String readFromFile(Path filepath) throws CustomArrayException {
         List<String> lines = new ArrayList<>();
-        String actualarray = null;
-        Path path = Paths.get(filepath);
-        if(Files.notExists(path)){
-            logger.log(Level.FATAL, "No file found in this path");
-            throw new CustomArrayException();
+        String actualArray = null;
+        Path path = Paths.get(String.valueOf(filepath));
+        if (Files.notExists(path)) {
+            logger.log(Level.ERROR, "File path problem");
+            throw new CustomArrayException("No file found in this path");
         }
         try (Stream<String> lineStream = Files.newBufferedReader(path).lines()) {
 
             lines = lineStream.collect(Collectors.toList());
             CustomArrayValidator validator = new CustomArrayValidator();
-            for(String line : lines) {
-                if(validator.validateFileData(line)) {
-                    actualarray = line;
+            for (String line : lines) {
+                if (validator.validateFileData(line)) {
+                    actualArray = line;
                     break;
                 }
             }
+            if (actualArray == null) {
+                logger.log(Level.ERROR, "Incorrect data");
+                throw new CustomArrayException("No valid array exist");
+            }
         } catch (IOException e) {
-            logger.log(Level.FATAL, "File open Error");
-            throw new CustomArrayException();
+            logger.log(Level.ERROR, "Incorrect path");
+            throw new CustomArrayException("File open Error");
         }
-        return actualarray;
+        return actualArray;
     }
 
 }

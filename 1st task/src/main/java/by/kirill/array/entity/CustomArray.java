@@ -15,33 +15,27 @@ public class CustomArray {
         this.array = Arrays.copyOf(array, array.length);
     }
 
-    /**
-     * @return a copy of the array
-     */
     public int[] getArray() {
         return Arrays.copyOf(array, array.length);
     }
 
     public int getElement(int index) throws CustomArrayException {
-        if (index <= 0 || index > array.length) {
+        if (index < 0 || index >= array.length) {
             throw new CustomArrayException("Incorrect index or array is empty");
         }
         return this.array[index];
     }
 
-    public void setElement(int i, int count) {
-        array[i] = count;
+    public void setElement(int index, int count) throws CustomArrayException {
+        if (index < 0 || index >= array.length) {
+            throw new CustomArrayException("Incorrect index or array is empty");
+        }
+        array[index] = count;
     }
 
     public void setArray(int[] array) {
-        this.array = Arrays.copyOf(array, array.length);
-    }
 
-    @Override
-    public String toString() {
-        return "CustomArray{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        this.array = Arrays.copyOf(array, array.length);
     }
 
     @Override
@@ -56,8 +50,4 @@ public class CustomArray {
         return Arrays.equals(array, that.array);
     }
 
-    @Override
-    public int hashCode() {
-        return Arrays.hashCode(array);
-    }
 }

@@ -1,33 +1,51 @@
 package by.kirill.array.service;
+
 import by.kirill.array.entity.ArrayPosNegCount;
 import by.kirill.array.entity.CustomArray;
+import by.kirill.array.exception.CustomArrayException;
+import by.kirill.array.validation.CustomArrayValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.stream.IntStream;
 
 
 public class FindPosNegCountService {
 
     private static Logger logger = LogManager.getLogger();
 
-    public ArrayPosNegCount countOfPositiveNegativeElements(CustomArray arr){
+    public ArrayPosNegCount calculatePositiveNegativeElementsWithStream(CustomArray customArray) throws CustomArrayException {
+        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        logger.log(Level.DEBUG, "in calculatePositiveNegativeElementsWithStream method");
+        int[] elements = customArray.getArray();
+        int positiveNumber = (int) IntStream.of(elements)
+                .filter(element -> element > 0)
+                .count();
+        int negativeNumber = (int) IntStream.of(elements)
+                .filter(e -> e < 0)
+                .count();
+        ArrayPosNegCount countOfNumbers = new ArrayPosNegCount(positiveNumber, negativeNumber);
+        return countOfNumbers;
+
+    }
+
+    public ArrayPosNegCount calculatePositiveNegativeElements(CustomArray customArray) throws CustomArrayException {
         logger.log(Level.DEBUG, "in countOfPositiveNegativeElements method");
-        if(arr.getArray().length == 0){
-            throw new IllegalArgumentException();
-        }
-        int posnumber = 0;
-        int negnumber = 0;
-        for(int i = 0; i<arr.getArray().length; i++){
-            if(arr.getArray()[i] < 0){
-                negnumber++;
-            } else if(arr.getArray()[i] >0) {
-                posnumber++;
+        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        int positiveNumber = 0;
+        int negativeNumber = 0;
+        for (int i = 0; i < customArray.getArray().length; i++) {
+            if (customArray.getArray()[i] < 0) {
+                negativeNumber++;
+            } else if (customArray.getArray()[i] > 0) {
+                positiveNumber++;
             }
         }
-
-        ArrayPosNegCount countofnumbers = new ArrayPosNegCount(posnumber, negnumber);
-        logger.log(Level.INFO, String.format("\nCount of positive array numbers: %d\nCount of negative array numbers: %d", posnumber, negnumber));
-        return countofnumbers;
+        ArrayPosNegCount countOfNumbers = new ArrayPosNegCount(positiveNumber, negativeNumber);
+        logger.log(Level.INFO, String.format("\nCount of positive array numbers: %d\nCount of negative array numbers: %d",
+                positiveNumber, negativeNumber));
+        return countOfNumbers;
     }
 
 }
