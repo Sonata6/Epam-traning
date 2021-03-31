@@ -18,7 +18,7 @@ public class CustomArrayValidator {
     }
 
     public static boolean validateFileData(String line) {
-        Pattern pattern = Pattern.compile("^-?[0-9]{1,10}(((\\s-)|(,))?(\\s)(-?)[0-9]{1,10})*$");
+        Pattern pattern = Pattern.compile("^-?\\d{1,10}(((\\s-)|(,))?(\\s)(-?)\\d{1,10})*$");
         Matcher matcher = pattern.matcher(line);
         if (matcher.find()) {
             return true;
