@@ -34,7 +34,6 @@ public class CustomArray {
     }
 
     public void setArray(int[] array) {
-
         this.array = Arrays.copyOf(array, array.length);
     }
 

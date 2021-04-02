@@ -1,7 +1,7 @@
 package by.kirill.array.parser;
 
 public class CustomArrayParser {
-
+    //handles numbers, which separate by " ", " - ", ", ".
     public int[] stringParser(String customArrayStr) {
         char charArray[] = customArrayStr.toCharArray();
         CustomArrayParser parser = new CustomArrayParser();

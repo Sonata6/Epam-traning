@@ -16,3 +16,156 @@
 2021-03-28 18:04:04 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
 2021-03-28 18:04:04 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
 2021-03-31 22:56:21 [main] INFO  by.kirill.array.creator.CustomArrayCreator- actual array: 14 7 113 25 -63
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:21:53 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:21:53 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:26:54 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:26:54 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:27:07 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:27:07 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 20:27:48 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 20:27:48 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 21:24:51 [main] INFO  by.kirill.array.reader.CustomArrayReader- Actual array: 14 7 113 25 -63
+2021-04-02 21:26:20 [main] INFO  by.kirill.array.reader.CustomArrayReader- Actual array: 14 7 113 25 -63
+2021-04-02 21:26:29 [main] INFO  by.kirill.array.reader.CustomArrayReader- Actual array: 14 7 113 25 -63
+2021-04-02 21:41:01 [main] DEBUG by.kirill.array.service.SortService- in bubbleSort
+2021-04-02 21:41:01 [main] DEBUG by.kirill.array.service.SortService- in insertionSort
+2021-04-02 21:41:01 [main] DEBUG by.kirill.array.service.SortService- in shakeSort
+2021-04-02 21:41:01 [main] DEBUG by.kirill.array.service.SortService- in intStreamSort
+2021-04-02 21:41:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 21:41:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 21:41:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 21:41:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 21:41:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 21:41:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 21:41:07 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 21:41:07 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 21:41:12 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-04-02 21:41:12 [main] INFO  by.kirill.array.service.ArrayReplaceService- replaceNumbers method finished successfully
+2021-04-02 21:41:12 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-04-02 21:41:12 [main] INFO  by.kirill.array.service.ArrayReplaceService- replaceNumbers method finished successfully
+2021-04-02 21:41:12 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-04-02 21:41:12 [main] INFO  by.kirill.array.service.ArrayReplaceService- replaceNumbers method finished successfully
+2021-04-02 21:41:12 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-04-02 21:41:12 [main] INFO  by.kirill.array.service.ArrayReplaceService- replaceNumbers method finished successfully
+2021-04-02 21:41:12 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-04-02 21:41:17 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in countOfPositiveNegativeElements method
+2021-04-02 21:41:17 [main] INFO  by.kirill.array.service.FindPosNegCountService- 
+Count of positive array numbers: 9
+Count of negative array numbers: 0
+2021-04-02 21:41:17 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in countOfPositiveNegativeElements method
+2021-04-02 21:41:17 [main] INFO  by.kirill.array.service.FindPosNegCountService- 
+Count of positive array numbers: 4
+Count of negative array numbers: 4
+2021-04-02 21:41:17 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in calculatePositiveNegativeElementsWithStream method
+2021-04-02 21:41:17 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in calculatePositiveNegativeElementsWithStream method
+2021-04-02 21:41:17 [main] DEBUG by.kirill.array.service.FindPosNegCountService- in countOfPositiveNegativeElements method
+2021-04-02 21:41:22 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-04-02 21:41:22 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-04-02 21:41:22 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-04-02 21:41:22 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: -4
+Max value of array: 4
+2021-04-02 21:41:22 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-04-02 21:41:22 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: -4
+Max value of array: 4
+2021-04-02 21:41:22 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 45
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 4,500000
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.ArraySumService- in findSum method
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverageWithStream method
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.ArraySumService- in findSumWithStream method
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.ArraySumService- sum of array elements: 0
+2021-04-02 21:41:27 [main] INFO  by.kirill.array.service.FindArrayAverageService- average array number: 0,000000
+2021-04-02 21:41:27 [main] DEBUG by.kirill.array.service.FindArrayAverageService- in findAverage method
+2021-04-02 21:41:36 [main] INFO  by.kirill.array.reader.CustomArrayReader- Actual array: 14 7 113 25 -63
+2021-04-02 21:47:48 [main] DEBUG by.kirill.array.service.ArrayReplaceService- in replaceNumbers method
+2021-04-02 21:47:48 [main] INFO  by.kirill.array.service.ArrayReplaceService- replaceNumbers method finished successfully
+2021-04-02 21:50:38 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-04-02 21:50:38 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-04-02 21:50:38 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-04-02 21:50:38 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: -4
+Max value of array: 4
+2021-04-02 21:50:38 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: 0
+Max value of array: 9
+2021-04-02 21:50:38 [main] INFO  by.kirill.array.service.ArrayMinMaxSearchService- 
+Min value of array: -4
+Max value of array: 4
+2021-04-02 21:50:38 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
