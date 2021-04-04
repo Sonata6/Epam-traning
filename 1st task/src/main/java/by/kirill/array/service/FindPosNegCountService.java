@@ -16,10 +16,10 @@ public class FindPosNegCountService {
     private static Logger logger = LogManager.getLogger();
 
     public ArrayPosNegCount calculatePositiveNegativeElementsWithStream(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in calculatePositiveNegativeElementsWithStream method");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
-        logger.log(Level.DEBUG, "in calculatePositiveNegativeElementsWithStream method");
         int[] elements = customArray.getArray();
         int positiveNumber = (int) IntStream.of(elements)
                 .filter(element -> element > 0)

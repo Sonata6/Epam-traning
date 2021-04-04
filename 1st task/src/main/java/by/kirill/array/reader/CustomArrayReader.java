@@ -26,7 +26,7 @@ public class CustomArrayReader {
         String actualArray = null;
         Path path = Paths.get(String.valueOf(filepath));
         if (Files.notExists(path)) {
-            logger.log(Level.ERROR, "File path problem");
+            logger.log(Level.ERROR, "File path problems");
             throw new CustomArrayException("No file found in this path");
         }
         try (Stream<String> lineStream = Files.newBufferedReader(path).lines()) {

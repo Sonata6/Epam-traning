@@ -1,8 +1,20 @@
 package by.kirill.array.parser;
 
+import by.kirill.array.exception.CustomArrayException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class CustomArrayParser {
     //handles numbers, which separate by " ", " - ", ", ".
-    public int[] stringParser(String customArrayStr) {
+
+    private static Logger logger = LogManager.getLogger();
+
+    public int[] stringParser(String customArrayStr) throws CustomArrayException {
+        if(customArrayStr == null) {
+            logger.log(Level.ERROR, "stringParser got null parameter.");
+            throw new CustomArrayException("Input string is null.");
+        }
         char charArray[] = customArrayStr.toCharArray();
         CustomArrayParser parser = new CustomArrayParser();
         boolean flag = false;

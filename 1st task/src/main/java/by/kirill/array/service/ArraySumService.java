@@ -14,10 +14,10 @@ public class ArraySumService {
     private static Logger logger = LogManager.getLogger();
 
     public long findSumWitnStream(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in findSumWithStream method");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
-        logger.log(Level.DEBUG, "in findSumWithStream method");
         int[] array = customArray.getArray();
         long sum = IntStream.of(array).sum();
         logger.log(Level.INFO, String.format("sum of array elements: %d", sum));
@@ -25,10 +25,10 @@ public class ArraySumService {
     }
 
     public long findSum(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in findSum method");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
-        logger.log(Level.DEBUG, "in findSum method");
         if (customArray.getArray().length == 0) {
             throw new IllegalArgumentException();
         }

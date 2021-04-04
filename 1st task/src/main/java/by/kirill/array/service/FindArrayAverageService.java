@@ -12,7 +12,8 @@ public class FindArrayAverageService {
     private static Logger logger = LogManager.getLogger();
 
 
-    public static float findAverageWithStream(CustomArray customArray) throws CustomArrayException { //TODO
+    public static float findAverageWithStream(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in findAverageWithStream method");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }

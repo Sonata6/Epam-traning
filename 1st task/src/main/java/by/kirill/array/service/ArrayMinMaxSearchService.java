@@ -15,7 +15,11 @@ public class ArrayMinMaxSearchService {
 
     private static Logger logger = LogManager.getLogger();
 
-    public ArrayMinMax minMaxFindWithStream(CustomArray customArray) {
+    public ArrayMinMax minMaxFindWithStream(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in minMaxFindWithStream method");
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         int currentArray[] = customArray.getArray();
         int min = Arrays.stream(currentArray).min().getAsInt();
         int max = Arrays.stream(currentArray).max().getAsInt();

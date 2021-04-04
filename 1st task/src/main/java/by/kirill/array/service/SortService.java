@@ -14,10 +14,10 @@ public class SortService {
     private final static Logger logger = LogManager.getLogger(SortService.class);
 
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in bubbleSort");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
-        logger.log(Level.DEBUG, "in bubbleSort");
         int[] array = customArray.getArray();
         int length = array.length;
         int temp;
@@ -34,10 +34,10 @@ public class SortService {
     }
 
     public void shakeSort(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in shakeSort");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
-        logger.log(Level.DEBUG, "in shakeSort");
         int[] array = customArray.getArray();
         for (int i = 0; i < array.length; i++) {
             int min = array[i];
@@ -56,10 +56,10 @@ public class SortService {
     }
 
     public void insertionSort(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in insertionSort");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
-        logger.log(Level.DEBUG, "in insertionSort");
         int[] array = customArray.getArray();
         for (int i = 1; i < array.length; i++) {
             int current = array[i];
@@ -74,6 +74,7 @@ public class SortService {
     }
 
     public void sortWithIntStream(CustomArray customArray) throws CustomArrayException {
+        logger.log(Level.DEBUG, "in sortWithIntStream");
         if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
             throw new CustomArrayException("Array is null or empty");
         }
