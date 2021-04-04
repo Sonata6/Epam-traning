@@ -60,8 +60,12 @@ public class CustomArray {
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
-        result = result + 10 * (array != null ? array.length : 0);
+        if (array == null || array.length == 0) {
+            return 0;
+        }
+        int result = 0;
+        for(int i = 0; i < array.length; i++)
+            result = 31 * result + array[i];
         return result;
     }
 
