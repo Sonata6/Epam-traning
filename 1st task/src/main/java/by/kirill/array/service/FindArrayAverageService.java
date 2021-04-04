@@ -5,14 +5,17 @@ import by.kirill.array.exception.CustomArrayException;
 import by.kirill.array.validation.CustomArrayValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class FindArrayAverageService {
 
-    private static org.apache.logging.log4j.Logger logger = LogManager.getLogger();
+    private static Logger logger = LogManager.getLogger();
 
 
     public static float findAverageWithStream(CustomArray customArray) throws CustomArrayException { //TODO
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         logger.log(Level.DEBUG, "in findAverageWithStream method");
         ArraySumService sumService = new ArraySumService();
         long sum = sumService.findSumWitnStream(customArray);
@@ -24,7 +27,9 @@ public class FindArrayAverageService {
 
     public float findAverage(CustomArray customArray) throws CustomArrayException {
         logger.log(Level.DEBUG, "in findAverage method");
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         ArraySumService sumService = new ArraySumService();
         long sum = sumService.findSum(customArray);
         float average;

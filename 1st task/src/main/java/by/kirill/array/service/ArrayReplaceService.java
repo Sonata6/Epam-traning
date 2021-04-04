@@ -16,7 +16,9 @@ public class ArrayReplaceService {
 
     public void replaceNumbersWithStream(CustomArray customArray, IntPredicate predicate) throws CustomArrayException {
         logger.log(Level.DEBUG, "in replaceNumbers method");
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         int currentArray[] = customArray.getArray();
         currentArray = IntStream.of(currentArray)
                 .map(element -> predicate.test(element) ? -1 : element)
@@ -27,7 +29,9 @@ public class ArrayReplaceService {
 
     public void replaceNumbers(CustomArray customArray) throws CustomArrayException {
         logger.log(Level.DEBUG, "in replaceNumbers method");
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         if (customArray.getArray().length == 0) {
             throw new IllegalArgumentException();
         }

@@ -11,6 +11,10 @@ public class CustomArray {
 
     private int[] array;
 
+    public CustomArray() {
+        array = new int[]{};
+    }
+
     public CustomArray(int[] array) {
         this.array = Arrays.copyOf(array, array.length);
     }
@@ -38,6 +42,11 @@ public class CustomArray {
     }
 
     @Override
+    public String toString() {
+        return " Array: " + Arrays.toString(array);
+    }
+
+    @Override
     public boolean equals(Object object) {
         if (this == object) {
             return true;
@@ -47,6 +56,13 @@ public class CustomArray {
         }
         CustomArray that = (CustomArray) object;
         return Arrays.equals(array, that.array);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = result + 10 * (array != null ? array.length : 0);
+        return result;
     }
 
 }

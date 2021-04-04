@@ -26,7 +26,9 @@ public class ArrayMinMaxSearchService {
 
     public ArrayMinMax minMaxFind(CustomArray customArray) throws CustomArrayException {
         logger.log(Level.DEBUG, "in minMaxFind method");
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         int min = customArray.getArray()[0];
         int max = customArray.getArray()[0];
         for (int i = 0; i < customArray.getArray().length; i++) {

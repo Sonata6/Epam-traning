@@ -1,7 +1,9 @@
 package by.kirill.array.validation;
 
 import by.kirill.array.entity.CustomArray;
-import by.kirill.array.exception.CustomArrayException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,13 +12,14 @@ import java.util.regex.Pattern;
 
 public class CustomArrayValidator {
 
-    public static void validateNotNullOrEmpty(CustomArray customArray) throws CustomArrayException {
-        if (customArray.getArray() == null) {
-            throw new CustomArrayException("incorrect CustomArray: cannot be null");
+    private static Logger logger = LogManager.getLogger();
+
+    public static boolean validateNotNullOrEmpty(CustomArray customArray) {
+        if (customArray.getArray() == null || customArray.getArray().length == 0) {
+            logger.log(Level.ERROR, "incorrect CustomArray: cannot be null or empty");
+            return false;
         }
-        if (customArray.getArray().length == 0) {
-            throw new CustomArrayException("CustomArray is empty");
-        }
+        return true;
     }
 
     public static boolean validateString(String line) {

@@ -12,9 +12,11 @@ public class CustomArrayCreator {
     private static Logger logger = LogManager.getLogger();
 
 
-    public CustomArray customArrayCreator(int[] currentArray) throws CustomArrayException {  //TODO
+    public CustomArray customArrayCreator(int[] currentArray) throws CustomArrayException {
         CustomArray customArray = new CustomArray(currentArray);
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         return customArray;
     }
 }

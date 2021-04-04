@@ -1,7 +1,5 @@
 package test.kirill.array.parser;
 
-import by.kirill.array.creator.CustomArrayCreator;
-import by.kirill.array.entity.CustomArray;
 import by.kirill.array.exception.CustomArrayException;
 import by.kirill.array.parser.CustomArrayParser;
 import org.testng.Assert;

@@ -14,7 +14,9 @@ public class SortService {
     private final static Logger logger = LogManager.getLogger(SortService.class);
 
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         logger.log(Level.DEBUG, "in bubbleSort");
         int[] array = customArray.getArray();
         int length = array.length;
@@ -32,7 +34,9 @@ public class SortService {
     }
 
     public void shakeSort(CustomArray customArray) throws CustomArrayException {
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         logger.log(Level.DEBUG, "in shakeSort");
         int[] array = customArray.getArray();
         for (int i = 0; i < array.length; i++) {
@@ -52,7 +56,9 @@ public class SortService {
     }
 
     public void insertionSort(CustomArray customArray) throws CustomArrayException {
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         logger.log(Level.DEBUG, "in insertionSort");
         int[] array = customArray.getArray();
         for (int i = 1; i < array.length; i++) {
@@ -67,13 +73,14 @@ public class SortService {
         customArray.setArray(array);
     }
 
-    public CustomArray sortWithIntStream(CustomArray customArray) throws CustomArrayException {
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+    public void sortWithIntStream(CustomArray customArray) throws CustomArrayException {
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         logger.log(Level.DEBUG, "in intStreamSort");
         int[] array = customArray.getArray();
         array = IntStream.of(array).sorted().toArray();
         customArray.setArray(array);
-        return customArray;
     }
 
 }

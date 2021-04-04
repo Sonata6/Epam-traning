@@ -169,3 +169,4 @@ Max value of array: 9
 Min value of array: -4
 Max value of array: 4
 2021-04-02 21:50:38 [main] DEBUG by.kirill.array.service.ArrayMinMaxSearchService- in minMaxFind method
+2021-04-02 22:58:08 [main] DEBUG by.kirill.array.service.SortService- in intStreamSort

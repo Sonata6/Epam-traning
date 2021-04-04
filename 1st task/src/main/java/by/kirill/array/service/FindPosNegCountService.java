@@ -16,7 +16,9 @@ public class FindPosNegCountService {
     private static Logger logger = LogManager.getLogger();
 
     public ArrayPosNegCount calculatePositiveNegativeElementsWithStream(CustomArray customArray) throws CustomArrayException {
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         logger.log(Level.DEBUG, "in calculatePositiveNegativeElementsWithStream method");
         int[] elements = customArray.getArray();
         int positiveNumber = (int) IntStream.of(elements)
@@ -32,7 +34,9 @@ public class FindPosNegCountService {
 
     public ArrayPosNegCount calculatePositiveNegativeElements(CustomArray customArray) throws CustomArrayException {
         logger.log(Level.DEBUG, "in countOfPositiveNegativeElements method");
-        CustomArrayValidator.validateNotNullOrEmpty(customArray);
+        if (CustomArrayValidator.validateNotNullOrEmpty(customArray)) {
+            throw new CustomArrayException("Array is null or empty");
+        }
         int positiveNumber = 0;
         int negativeNumber = 0;
         for (int i = 0; i < customArray.getArray().length; i++) {
