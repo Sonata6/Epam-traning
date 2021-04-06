@@ -6,7 +6,6 @@ import by.kirill.array.validation.CustomArrayValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 

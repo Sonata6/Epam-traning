@@ -1,7 +1,6 @@
 package by.kirill.array.entity;
 
 import by.kirill.array.exception.CustomArrayException;
-
 import javax.persistence.Entity;
 import java.util.Arrays;
 
