@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a86fd07-93e6-4561-95bf-a7c4ddff52b3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qCbf0zO6h0PkX2XFrsBFBJxbSN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tmp" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my projects\Epam courses\1st task\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.CustomArrayCreatorTest">
+    <configuration name="ArrayMinMaxSearchTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="1st task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.kirill.array.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.kirill.array.service" />
+      <option name="MAIN_CLASS_NAME" value="test.kirill.array.service.ArrayMinMaxSearchTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayReplaceTest.checkReplacedArrayTestWithStream1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="1st task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.kirill.array.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.kirill.array.service" />
+      <option name="MAIN_CLASS_NAME" value="test.kirill.array.service.ArrayReplaceTest" />
+      <option name="METHOD_NAME" value="checkReplacedArrayTestWithStream1" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomArrayCreatorTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="1st task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.kirill.array.creator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.kirill.array.creator" />
+      <option name="MAIN_CLASS_NAME" value="test.kirill.array.creator.CustomArrayCreatorTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomArrayParserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="1st task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.kirill.array.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.kirill.array.parser" />
+      <option name="MAIN_CLASS_NAME" value="test.kirill.array.parser.CustomArrayParserTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortTest.sortWithIntStreamTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="1st task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.kirill.array.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.kirill.array.service" />
+      <option name="MAIN_CLASS_NAME" value="test.kirill.array.service.SortTest" />
+      <option name="METHOD_NAME" value="sortWithIntStreamTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.CustomArrayCreatorTest" />
+        <item itemvalue="TestNG.SortTest.sortWithIntStreamTest" />
+        <item itemvalue="TestNG.ArrayMinMaxSearchTest" />
+        <item itemvalue="TestNG.ArrayReplaceTest.checkReplacedArrayTestWithStream1" />
+        <item itemvalue="TestNG.CustomArrayParserTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a86fd07-93e6-4561-95bf-a7c4ddff52b3" name="Default Changelist" comment="" />
+      <created>1616586621869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616586621869</updated>
+      <workItem from="1616586623283" duration="1730000" />
+      <workItem from="1616592613414" duration="4938000" />
+      <workItem from="1616605601730" duration="11059000" />
+      <workItem from="1616659451941" duration="9181000" />
+      <workItem from="1616677488997" duration="1082000" />
+      <workItem from="1616683297761" duration="601000" />
+      <workItem from="1616756628095" duration="8844000" />
+      <workItem from="1616825099024" duration="2025000" />
+      <workItem from="1616851174967" duration="17926000" />
+      <workItem from="1616916550326" duration="15194000" />
+      <workItem from="1616934526986" duration="7171000" />
+      <workItem from="1616942771609" duration="55000" />
+      <workItem from="1616942862202" duration="23000" />
+      <workItem from="1616943372951" duration="1061000" />
+      <workItem from="1617032170256" duration="1460000" />
+      <workItem from="1617090742330" duration="405000" />
+      <workItem from="1617220512976" duration="74000" />
+      <workItem from="1617281663820" duration="91000" />
+      <workItem from="1617368870080" duration="12752000" />
+      <workItem from="1617393424116" duration="970000" />
+      <workItem from="1617397567629" duration="10000" />
+      <workItem from="1617524146269" duration="217000" />
+      <workItem from="1617524494210" duration="1830000" />
+      <workItem from="1617543616784" duration="261000" />
+      <workItem from="1617708468894" duration="115000" />
+      <workItem from="1617815225813" duration="604000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/test/kirill/array/reader/CustomArrayReaderTest.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
