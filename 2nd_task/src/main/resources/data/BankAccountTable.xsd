@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="https://github.com/Sonata6/Epam-traning/tree/main/2nd_task"
+        xmlns:tns="https://github.com/Sonata6/Epam-traning/tree/main/2nd_task"
+        elementFormDefault="qualified">
+    <element name="Bank-accounts" abstract="true">
+        <complexType>
+            <sequence>
+                <element name="account" type="tns:Account" minOccurs="16" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Account">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="country" type="string"/>
+            <element name="type" type="tns:Types-tns"/>
+            <element name="depositor" type="tns:Name-tns"/>
+            <element name="account-id" type="tns:AccountId-tns"/>
+            <element name="amount-on-deposit" type="string"/>
+            <element name="profitability" type="int"/>
+            <element name="time-constraints" type="int"/>
+        </sequence>
+        <attribute name="login" type="tns:Login-tns" use="required"/>
+        <attribute name="id"  type="tns:Id-tns" use="required"/>
+    </complexType>
+
+
+    <simpleType name="Name-tns">
+        <restriction base="string">
+            <minLength value="2"/>
+            <maxLength value="20"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Login-tns">
+        <restriction base="string">
+            <pattern value="\\w {2,20}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Id-tns">
+        <restriction base="ID">
+            <pattern value="\\w {2,20}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="AccountId-tns">
+        <restriction base="int">
+            <pattern value="\\d {20}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Types-tns">
+        <restriction base="string">
+            <enumeration value="demand"/>
+            <enumeration value="time"/>
+            <enumeration value="settlement"/>
+            <enumeration value="accumulative"/>
+            <enumeration value="savings"/>
+            <enumeration value="metal"/>
+        </restriction>
+    </simpleType>
+
+    <element name="bank-accounts" type="tns:Account" substitutionGroup="tns:Bank-accounts"/>
+</schema>
