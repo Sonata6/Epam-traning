@@ -1,67 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="https://github.com/Sonata6/Epam-traning/tree/main/2nd_task"
-        xmlns:tns="https://github.com/Sonata6/Epam-traning/tree/main/2nd_task"
-        elementFormDefault="qualified">
-    <element name="Bank-accounts" abstract="true">
-        <complexType>
-            <sequence>
-                <element name="account" type="tns:Account" minOccurs="16" maxOccurs="unbounded"/>
-            </sequence>
-        </complexType>
-    </element>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.github.com/Sonata6/2nd_task"
+           targetNamespace="http://www.github.com/Sonata6/2nd_task"
+           elementFormDefault="qualified"
+>
 
-    <complexType name="Account">
-        <sequence>
-            <element name="name" type="string"/>
-            <element name="country" type="string"/>
-            <element name="type" type="tns:Types-tns"/>
-            <element name="depositor" type="tns:Name-tns"/>
-            <element name="account-id" type="tns:AccountId-tns"/>
-            <element name="amount-on-deposit" type="string"/>
-            <element name="profitability" type="int"/>
-            <element name="time-constraints" type="int"/>
-        </sequence>
-        <attribute name="login" type="tns:Login-tns" use="required"/>
-        <attribute name="id"  type="tns:Id-tns" use="required"/>
-    </complexType>
+    <!-- ROOT ELEMENT -->
+
+    <xs:element name="bank-accounts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="account-type" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
 
-    <simpleType name="Name-tns">
-        <restriction base="string">
-            <minLength value="2"/>
-            <maxLength value="20"/>
-        </restriction>
-    </simpleType>
+    <!-- CHILD ELEMENT OF ROOT -->
 
-    <simpleType name="Login-tns">
-        <restriction base="string">
-            <pattern value="\\w {2,20}"/>
-        </restriction>
-    </simpleType>
+    <xs:complexType name="account-type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="country" type="xs:string"/>
+            <xs:element name="type" type="Deposit-types"/>
+            <xs:element name="depositor" type="Name"/>
+            <xs:element name="account-id" type="AccountId"/>
+            <xs:element name="amount-on-deposit" type="xs:string"/>
+            <xs:element name="profitability" type="xs:string"/>
+            <xs:element name="time-constraints" type="xs:gYearMonth"/>
+        </xs:sequence>
+        <xs:attribute name="login" type="Login" use="optional"/>
+        <xs:attribute name="worldTopNumber"  type="WorldTopNumber" use="required"/>
+    </xs:complexType>
 
-    <simpleType name="Id-tns">
-        <restriction base="ID">
-            <pattern value="\\w {2,20}"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="Name">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="AccountId-tns">
-        <restriction base="int">
-            <pattern value="\\d {20}"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="Login">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="\w{1,16}"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-    <simpleType name="Types-tns">
-        <restriction base="string">
-            <enumeration value="demand"/>
-            <enumeration value="time"/>
-            <enumeration value="settlement"/>
-            <enumeration value="accumulative"/>
-            <enumeration value="savings"/>
-            <enumeration value="metal"/>
-        </restriction>
-    </simpleType>
+    <xs:simpleType name="WorldTopNumber">
+        <xs:restriction base="xs:int">
+        </xs:restriction>
+    </xs:simpleType>
 
-    <element name="bank-accounts" type="tns:Account" substitutionGroup="tns:Bank-accounts"/>
-</schema>
+    <xs:simpleType name="AccountId">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="Deposit-types">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="demand"/>
+            <xs:enumeration value="time"/>
+            <xs:enumeration value="settlement"/>
+            <xs:enumeration value="accumulative"/>
+            <xs:enumeration value="savings"/>
+            <xs:enumeration value="metal"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

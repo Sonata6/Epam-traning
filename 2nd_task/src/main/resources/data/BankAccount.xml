@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<bank-accounts>
-
-    <account login="qwertyui" id="12345"><!--1-->
+<?xml version="1.0" encoding="UTF-8"?>
+<bank-accounts
+        xmlns="http://www.github.com/Sonata6/2nd_task"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.github.com/Sonata6/2nd_task BankAccountTable.xsd "
+>
+    <account login="qwertyui" worldTopNumber="7"><!--1-->
         <name>Paribas</name>
         <country>France</country>
         <type>demand</type>
@@ -9,10 +12,10 @@
         <account-id>40227810099910004312</account-id>
         <amount-on-deposit>3000</amount-on-deposit><!--in dollars-->
         <profitability>2.0</profitability><!--in percents-->
-        <time-constraints>3</time-constraints><!--in years-->
+        <time-constraints>2023-06</time-constraints>
     </account>
 
-    <account login="qwertydi" id="12346"><!--2-->
+    <account login="qwertydi" worldTopNumber="8"><!--2-->
         <name>Citigroup</name>
         <country>USA</country>
         <type>time</type>
@@ -20,10 +23,10 @@
         <account-id>40657810022810004312</account-id>
         <amount-on-deposit>2340</amount-on-deposit><!--in dollars-->
         <profitability>2.4</profitability><!--in percents-->
-        <time-constraints>8</time-constraints><!--in years-->
+        <time-constraints>2023-05</time-constraints>
     </account>
 
-    <account login="qwfrtyui" id="12334"><!--3-->
+    <account login="qwfrtyui" worldTopNumber="9"><!--3-->
         <name>Japan Post Bank</name>
         <country>Japan</country>
         <type>settlement</type>
@@ -31,10 +34,10 @@
         <account-id>45417810099910004312</account-id>
         <amount-on-deposit>3123</amount-on-deposit><!--in dollars-->
         <profitability>2.3</profitability><!--in percents-->
-        <time-constraints>4</time-constraints><!--in years-->
+        <time-constraints>2024-06</time-constraints>
     </account>
 
-    <account login="qgertyui" id="12354"><!--4-->
+    <account login="qgertyui" worldTopNumber="10"><!--4-->
         <name>Sumitomo Mitsui Financial Group</name>
         <country>Japan</country>
         <type>accumulative</type>
@@ -42,10 +45,10 @@
         <account-id>46617810099910004312</account-id>
         <amount-on-deposit>335</amount-on-deposit><!--in dollars-->
         <profitability>2.1</profitability><!--in percents-->
-        <time-constraints>4</time-constraints><!--in years-->
+        <time-constraints>2026-06</time-constraints>
     </account>
 
-    <account login="qwehtyui" id="12348"><!--5-->
+    <account login="qwehtyui" worldTopNumber="11"><!--5-->
         <name>Mizuho Financial Group</name>
         <country>Japan</country>
         <type>savings</type>
@@ -53,10 +56,10 @@
         <account-id>44817810099910004312</account-id>
         <amount-on-deposit>6000</amount-on-deposit><!--in dollars-->
         <profitability>4.5</profitability><!--in percents-->
-        <time-constraints>5</time-constraints><!--in years-->
+        <time-constraints>2022-03</time-constraints>
     </account>
 
-    <account login="qwejtyui" id="12343"><!--6-->
+    <account login="qwejtyui" worldTopNumber="12"><!--6-->
         <name>Banko Santander</name>
         <country>Spain</country>
         <type>metal</type>
@@ -64,10 +67,10 @@
         <account-id>42817810099910004312</account-id>
         <amount-on-deposit>4323</amount-on-deposit><!--in dollars-->
         <profitability>2.7</profitability><!--in percents-->
-        <time-constraints>3</time-constraints><!--in years-->
+        <time-constraints>2023-06</time-constraints>
     </account>
 
-    <account login="qkertyui" id="12342"><!--7-->
+    <account login="qkertyui" worldTopNumber="13"><!--7-->
         <name>Postal Savings Bank of China</name>
         <country>Britain</country>
         <type>demand</type>
@@ -75,10 +78,10 @@
         <account-id>40817810099918804312</account-id>
         <amount-on-deposit>4321</amount-on-deposit><!--in dollars-->
         <profitability>1.9</profitability><!--in percents-->
-        <time-constraints>6</time-constraints><!--in years-->
+        <time-constraints>2023-08</time-constraints>
     </account>
 
-    <account login="qweltyui" id="12341"><!--8-->
+    <account login="qweltyui" worldTopNumber="14"><!--8-->
         <name>Societe Generale</name>
         <country>France</country>
         <type>time</type>
@@ -86,10 +89,10 @@
         <account-id>40817810099912304312</account-id>
         <amount-on-deposit>4000</amount-on-deposit><!--in dollars-->
         <profitability>4.4</profitability><!--in percents-->
-        <time-constraints>4</time-constraints><!--in years-->
+        <time-constraints>2023-01</time-constraints>
     </account>
 
-    <account login="qwzrtyui" id="12311"><!--9-->
+    <account login="qwzrtyui" worldTopNumber="15"><!--9-->
         <name>Deutsche Bank</name>
         <country>Germany</country>
         <type>accumulative</type>
@@ -97,10 +100,10 @@
         <account-id>40817810559910004312</account-id>
         <amount-on-deposit>5000</amount-on-deposit><!--in dollars-->
         <profitability>2.3</profitability><!--in percents-->
-        <time-constraints>4</time-constraints><!--in years-->
+        <time-constraints>2025-11</time-constraints>
     </account>
 
-    <account login="qcertyui" id="12312"><!--10-->
+    <account login="qcertyui" worldTopNumber="16"><!--10-->
         <name>Groupe BPCE</name>
         <country>France</country>
         <type>settlement</type>
@@ -108,10 +111,10 @@
         <account-id>40817810339910004312</account-id>
         <amount-on-deposit>3100</amount-on-deposit><!--in dollars-->
         <profitability>2.2</profitability><!--in percents-->
-        <time-constraints>6</time-constraints><!--in years-->
+        <time-constraints>2021-06</time-constraints>
     </account>
 
-    <account login="qwextyui" id="12313"><!--11-->
+    <account login="qwextyui" worldTopNumber="0"><!--11-->
         <name>Industrial and Commercial Bank of China</name>
         <country>China</country>
         <type>savings</type>
@@ -119,10 +122,10 @@
         <account-id>40817810099650004312</account-id>
         <amount-on-deposit>3500</amount-on-deposit><!--in dollars-->
         <profitability>2.0</profitability><!--in percents-->
-        <time-constraints>7</time-constraints><!--in years-->
+        <time-constraints>2023-12</time-constraints>
     </account>
 
-    <account login="qwervyui" id="123414"><!--12-->
+    <account login="qwervyui" worldTopNumber="1"><!--12-->
         <name>Agricultural Bank of China</name>
         <country>China</country>
         <type>metal</type>
@@ -130,10 +133,10 @@
         <account-id>40834810099910004312</account-id>
         <amount-on-deposit>2600</amount-on-deposit><!--in dollars-->
         <profitability>3.5</profitability><!--in percents-->
-        <time-constraints>1</time-constraints><!--in years-->
+        <time-constraints>2024-06</time-constraints>
     </account>
 
-    <account login="qwbrtyui" id="12315"><!--13-->
+    <account login="qwbrtyui" worldTopNumber="2"><!--13-->
         <name>Paribas</name>
         <country>France</country>
         <type>demand</type>
@@ -141,10 +144,10 @@
         <account-id>40817650099910004312</account-id>
         <amount-on-deposit>14400</amount-on-deposit><!--in dollars-->
         <profitability>3.0</profitability><!--in percents-->
-        <time-constraints>2</time-constraints><!--in years-->
+        <time-constraints>2024-05</time-constraints>
     </account>
 
-    <account login="nwertyui" id="12316"><!--14-->
+    <account login="nwertyui" worldTopNumber="3"><!--14-->
         <name>China Construction Bank Corporation</name>
         <country>China</country>
         <type>time</type>
@@ -152,10 +155,10 @@
         <account-id>40845810099910004312</account-id>
         <amount-on-deposit>500</amount-on-deposit><!--in dollars-->
         <profitability>4.5</profitability><!--in percents-->
-        <time-constraints>2</time-constraints><!--in years-->
+        <time-constraints>2024-04</time-constraints>
     </account>
 
-    <account login="qwmrtyui" id="12332"><!--15-->
+    <account login="qwmrtyui" worldTopNumber="4"><!--15-->
         <name>Bank of China ltd</name>
         <country>China</country>
         <type>settlement</type>
@@ -163,10 +166,10 @@
         <account-id>40817810022910004312</account-id>
         <amount-on-deposit>5670</amount-on-deposit><!--in dollars-->
         <profitability>3.6</profitability><!--in percents-->
-        <time-constraints>3</time-constraints><!--in years-->
+        <time-constraints>2024-03</time-constraints>
     </account>
 
-    <account login="qwertydf" id="12444"><!--16-->
+    <account login="qwertydf" worldTopNumber="5"><!--16-->
         <name>Bank of China ltd</name>
         <country>Japan</country>
         <type>time</type>
@@ -174,7 +177,7 @@
         <account-id>40817810095410004312</account-id>
         <amount-on-deposit>3050</amount-on-deposit><!--in dollars-->
         <profitability>3.4</profitability><!--in percents-->
-        <time-constraints>1</time-constraints><!--in years-->
+        <time-constraints>2024-02</time-constraints>
     </account>
 
 </bank-accounts>
