@@ -13,6 +13,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -23,7 +24,7 @@ public class CustomCubeReader
 
     public List<String> readFromFile(Path filepath) throws CustomCubeException {
         List<String> lines;
-        List<String> correctLines = null;
+        List<String> correctLines = new ArrayList<>();
         Path path = Paths.get(String.valueOf(filepath));
         if (Files.notExists(path)) {
             logger.log(Level.ERROR, "File path problems");

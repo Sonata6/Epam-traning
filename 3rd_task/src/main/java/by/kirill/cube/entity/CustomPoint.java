@@ -1,6 +1,5 @@
 package by.kirill.cube.entity;
 
-import java.util.Objects;
 
 public class CustomPoint {
     private String id;
@@ -8,13 +7,13 @@ public class CustomPoint {
     private int y;
     private int z;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CustomPoint that = (CustomPoint) o;
-        return x == that.x && y == that.y && z == that.z && Objects.equals(id, that.id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        CustomPoint that = (CustomPoint) o;
+//        return x == that.x && y == that.y && z == that.z && Objects.equals(id, that.id);
+//    }
 
     @Override
     public String toString() {

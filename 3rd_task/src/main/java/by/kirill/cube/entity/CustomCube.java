@@ -1,6 +1,5 @@
 package by.kirill.cube.entity;
 
-import java.util.Objects;
 
 public class CustomCube {
 
@@ -86,13 +85,13 @@ public class CustomCube {
         this.d1 = d1;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CustomCube that = (CustomCube) o;
-        return Objects.equals(id, that.id) && Objects.equals(a, that.a) && Objects.equals(b, that.b) && Objects.equals(c, that.c) && Objects.equals(d, that.d) && Objects.equals(a1, that.a1) && Objects.equals(b1, that.b1) && Objects.equals(c1, that.c1) && Objects.equals(d1, that.d1);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        CustomCube that = (CustomCube) o;
+//        return Objects.equals(id, that.id) && Objects.equals(a, that.a) && Objects.equals(b, that.b) && Objects.equals(c, that.c) && Objects.equals(d, that.d) && Objects.equals(a1, that.a1) && Objects.equals(b1, that.b1) && Objects.equals(c1, that.c1) && Objects.equals(d1, that.d1);
+//    }
 
     @Override
     public int hashCode() {

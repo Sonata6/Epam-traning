@@ -23,7 +23,7 @@ public class CustomCubeValidator {
 //    }
 
     public static boolean validateString(String line) {
-        Pattern pattern = Pattern.compile("^-?\\d{1,10}(((\\s-)|(,))?(\\s)(-?)\\d{1,10})*$");
+        Pattern pattern = Pattern.compile("^-?\\d{1,10}((,)?(\\s)(-?)\\d{1,10})*$");
         Matcher matcher = pattern.matcher(line);
         if (matcher.find()) {
             return true;
