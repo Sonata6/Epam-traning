@@ -1,70 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns="http://www.github.com/Sonata6/2nd_task"
-           targetNamespace="http://www.github.com/Sonata6/2nd_task"
-           elementFormDefault="qualified"
->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.org/accounts"
+        xmlns:tns="http://www.example.org/accounts"
+        elementFormDefault="qualified">
+
 
     <!-- ROOT ELEMENT -->
 
-    <xs:element name="bank-accounts">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="account" type="account-type" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+    <element name="bank-accounts">
+        <complexType>
+            <sequence>
+                <element ref="tns:account" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
 
 
     <!-- CHILD ELEMENT OF ROOT -->
 
-    <xs:complexType name="account-type">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="country" type="xs:string"/>
-            <xs:element name="type" type="Deposit-types"/>
-            <xs:element name="depositor" type="Name"/>
-            <xs:element name="account-id" type="AccountId"/>
-            <xs:element name="amount-on-deposit" type="xs:string"/>
-            <xs:element name="profitability" type="xs:string"/>
-            <xs:element name="time-constraints" type="xs:gYearMonth"/>
-        </xs:sequence>
-        <xs:attribute name="login" type="Login" use="optional"/>
-        <xs:attribute name="worldTopNumber"  type="WorldTopNumber" use="required"/>
-    </xs:complexType>
+    <complexType name="account-type">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="country" type="string"/>
+            <element name="type" type="tns:Deposit-types"/>
+            <element name="depositor" type="Name"/>
+            <element name="account-id" type="tns:AccountId"/>
+            <element name="amount-on-deposit" type="string"/>
+            <element name="profitability" type="string"/>
+            <element name="time-constraints" type="gYearMonth"/>
+        </sequence>
+        <attribute name="login" type="tns:Login" use="optional"/>
+        <attribute name="worldTopNumber"  type="tns:WorldTopNumber" use="required"/>
+    </complexType>
 
-    <xs:simpleType name="Name">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="2"/>
-            <xs:maxLength value="20"/>
-        </xs:restriction>
-    </xs:simpleType>
+        <complexType name="refillableAccount">
+            <complexContent>
+                <extension base="tns:account-type">
+                    <sequence>
+                        <element name="monthly-accrual" type="boolean" />
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
 
-    <xs:simpleType name="Login">
-        <xs:restriction base="xs:ID">
-            <xs:pattern value="\w{1,16}"/>
-        </xs:restriction>
-    </xs:simpleType>
+    <complexType name="nonRefillableAccount">
+        <complexContent>
+            <extension base="tns:account-type">
+                <sequence>
+                        <element name="intermediate-accrual" type="boolean" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
 
-    <xs:simpleType name="WorldTopNumber">
-        <xs:restriction base="xs:int">
-        </xs:restriction>
-    </xs:simpleType>
+    <simpleType name="Name">
+        <restriction base="string">
+            <minLength value="2"/>
+            <maxLength value="20"/>
+        </restriction>
+    </simpleType>
 
-    <xs:simpleType name="AccountId">
-        <xs:restriction base="xs:string">
-        </xs:restriction>
-    </xs:simpleType>
+    <simpleType name="Login">
+        <restriction base="ID">
+            <pattern value="\w{1,16}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="WorldTopNumber">
+        <restriction base="int">
+        </restriction>
+    </simpleType>
+
+    <simpleType name="AccountId">
+        <restriction base="string">
+        </restriction>
+    </simpleType>
 
 
-    <xs:simpleType name="Deposit-types">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="demand"/>
-            <xs:enumeration value="time"/>
-            <xs:enumeration value="settlement"/>
-            <xs:enumeration value="accumulative"/>
-            <xs:enumeration value="savings"/>
-            <xs:enumeration value="metal"/>
-        </xs:restriction>
-    </xs:simpleType>
-</xs:schema>
+    <simpleType name="Deposit-types">
+        <restriction base="string">
+            <enumeration value="demand"/>
+            <enumeration value="time"/>
+            <enumeration value="settlement"/>
+            <enumeration value="accumulative"/>
+            <enumeration value="savings"/>
+            <enumeration value="metal"/>
+        </restriction>
+    </simpleType>
+
+    <element name="account" type="tns:account-type" abstract="true" />
+    <element name="refillable-account" type="tns:refillableAccount" substitutionGroup="tns:account" />
+    <element name="non-refillable-account" type="tns:nonRefillableAccount" substitutionGroup="tns:account" />
+</schema>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<schema xmlns="http://www.w3.org/2001/XMLSchema"-->
+<!--        targetNamespace="http://www.example.org/accounts"-->
+<!--        xmlns:tns="http://www.example.org/accounts"-->
+<!--        elementFormDefault="qualified">-->
+
+
+<!--    <element name="bank-accounts">-->
+<!--        <complexType>-->
+<!--            <sequence>-->
+<!--                <element name="account" type="bank-account" minOccurs="0" maxOccurs="unbounded"/>-->
+<!--            </sequence>-->
+<!--        </complexType>-->
+<!--    </element>-->
+
+
+
+<!--    <complexType name="bank-account">-->
+<!--        <sequence>-->
+<!--            <element name="name" type="string"/>-->
+<!--            <element name="country" type="string"/>-->
+<!--            <element name="type" type="Deposit-types"/>-->
+<!--            <element name="depositor" type="Name"/>-->
+<!--            <element name="account-id" type="AccountId"/>-->
+<!--            <element name="amount-on-deposit" type="string"/>-->
+<!--            <element name="profitability" type="string"/>-->
+<!--            <element name="time-constraints" type="gYearMonth"/>-->
+<!--        </sequence>-->
+<!--        <attribute name="login" type="Login" use="optional"/>-->
+<!--        <attribute name="worldTopNumber"  type="WorldTopNumber" use="required"/>-->
+<!--    </complexType>-->
+
+
+<!--    <complexType name="refillableAccount">-->
+<!--        <complexContent>-->
+<!--            <extension base="bank-account">-->
+<!--                <sequence>-->
+<!--                    <element name="monthly-accrual" type="tns:peripheralDeviceType" />-->
+<!--                    <element name="one-time-accrual" type="tns:peripheralDevicePort" />-->
+<!--                </sequence>-->
+<!--            </extension>-->
+<!--        </complexContent>-->
+<!--    </complexType>-->
+
+<!--    <complexType name="nonRefillableAccount">-->
+<!--        <complexContent>-->
+<!--            <extension base="tns:device">-->
+<!--                <sequence>-->
+<!--                    <element name="intermediate-accrual" type="tns:integralDeviceType" />-->
+<!--                </sequence>-->
+<!--            </extension>-->
+<!--        </complexContent>-->
+<!--    </complexType>-->
+
+
+
+<!--    <simpleType name="Name">-->
+<!--        <restriction base="string">-->
+<!--            <minLength value="2"/>-->
+<!--            <maxLength value="20"/>-->
+<!--        </restriction>-->
+<!--    </simpleType>-->
+
+<!--    <simpleType name="Login">-->
+<!--        <restriction base="ID">-->
+<!--            <pattern value="\w{1,16}"/>-->
+<!--        </restriction>-->
+<!--    </simpleType>-->
+
+<!--    <simpleType name="WorldTopNumber">-->
+<!--        <restriction base="int">-->
+<!--        </restriction>-->
+<!--    </simpleType>-->
+
+<!--    <simpleType name="AccountId">-->
+<!--        <restriction base="string">-->
+<!--        </restriction>-->
+<!--    </simpleType>-->
+
+
+<!--    <simpleType name="Deposit-types">-->
+<!--        <restriction base="string">-->
+<!--            <enumeration value="demand"/>-->
+<!--            <enumeration value="time"/>-->
+<!--            <enumeration value="settlement"/>-->
+<!--            <enumeration value="accumulative"/>-->
+<!--            <enumeration value="savings"/>-->
+<!--            <enumeration value="metal"/>-->
+<!--        </restriction>-->
+<!--    </simpleType>-->
+
+<!--    <element name="bank-account" type="bank-account" abstract="true" />-->
+<!--    <element name="integral-device" type="refillableAccount" substitutionGroup="bank-account" />-->
+<!--    <element name="peripheral-device" type="nonRefillableAccount" substitutionGroup="bank-account" />-->
+<!--</schema>-->
