@@ -16,9 +16,8 @@ public class CustomCubeParser {
             throw new CustomCubeException("Input string is null.");
         }
         char charArray[] = customArrayStr.toCharArray();
-        CustomCubeParser parser = new CustomCubeParser();
         boolean flag = false;
-        int lenght = parser.findNumberOfElements(charArray);
+        int lenght = findNumberOfElements(charArray);
         int actualArray[] = new int[lenght];
         int index = lenght - 1;
         int ten = 10;

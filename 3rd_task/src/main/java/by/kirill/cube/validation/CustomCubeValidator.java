@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CustomCubeValidator {
-
+    private static final String CUBE_REGEX = "^-?\\d{1,10}((,)?(\\s)(-?)\\d{1,10})*$";
     private static Logger logger = LogManager.getLogger();
 
 //    public static boolean validateNotNullOrEmpty(CustomCube customCube) {
