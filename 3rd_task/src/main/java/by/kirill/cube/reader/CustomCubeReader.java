@@ -22,10 +22,10 @@ public class CustomCubeReader
 {
     private static Logger logger = LogManager.getLogger();
 
-    public List<String> readFromFile(String filepath) throws CustomCubeException {
-        Path path = createFilePath(filepath);
+    public List<String> readFromFile(Path filepath) throws CustomCubeException {
         List<String> lines;
         List<String> correctLines = new ArrayList<>();
+        Path path = Paths.get(String.valueOf(filepath));
         if (Files.notExists(path)) {
             logger.log(Level.ERROR, "File path problems");
             throw new CustomCubeException("No file found in this path");
@@ -50,7 +50,7 @@ public class CustomCubeReader
     }
 
 
-    private Path createFilePath(String filePath) throws CustomCubeException {
+    public Path createFilePath(String filePath) throws CustomCubeException {
         URI uri;
         try {
             uri = getClass().getResource(filePath).toURI();
