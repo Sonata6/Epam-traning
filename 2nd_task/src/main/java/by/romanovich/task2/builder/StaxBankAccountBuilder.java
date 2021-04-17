@@ -1,6 +1,7 @@
 package by.romanovich.task2.builder;
 
 import by.romanovich.task2.entity.AbstractAccount;
+import by.romanovich.task2.entity.AccountDepositTypes;
 import by.romanovich.task2.entity.NonRefillableAccount;
 import by.romanovich.task2.entity.RefillableAccount;
 import by.romanovich.task2.exception.BankAccountException;
@@ -15,7 +16,7 @@ import java.io.File;
 import java.time.YearMonth;
 import java.util.Optional;
 
-public class StaxBankAccountBuilder extends AbstractBankAccountBuilder{
+public class StaxBankAccountBuilder extends AbstractBankAccountBuilder {
     private static final char HYPHEN = '-';
     private static final char UNDERSCORE = '_';
 
@@ -72,11 +73,11 @@ public class StaxBankAccountBuilder extends AbstractBankAccountBuilder{
 
     private void buildEntity(AbstractAccount account, XMLStreamReader reader) throws XMLStreamException, BankAccountException {
         String loginAttribute = BankAccountXmlAttribute.LOGIN.toString(); // todo
-        String manufacturerWebsiteAttribute = BankAccountXmlAttribute.WORLDTOPNUMBER.toString();
-        String accountId = reader.getAttributeValue(null, loginAttribute);
+        String manufacturerWebsiteAttribute = BankAccountXmlAttribute.WORLD_TOP_NUMBER.toString();
+        String login = reader.getAttributeValue(null, loginAttribute);
         String worldTopNumber = reader.getAttributeValue(null, manufacturerWebsiteAttribute);
 
-        account.setLogin(accountId);
+        account.setLogin(login);
         account.setWorldTopNumber(worldTopNumber);
         String name;
 
@@ -86,9 +87,9 @@ public class StaxBankAccountBuilder extends AbstractBankAccountBuilder{
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT -> {
                     name = reader.getLocalName();
-//                    String constantName = toConstantName(name);
-//                    BankAccountXmlTag tag = BankAccountXmlTag.valueOf(constantName);
-//                    initializeField(reader, tag, account);
+                    String constantName = toConstantName(name);
+                    BankAccountXmlTag tag = BankAccountXmlTag.valueOf(constantName);
+                    initializeField(reader, tag, account);
                 }
                 case XMLStreamConstants.END_ELEMENT -> {
                     name = reader.getLocalName();
@@ -113,16 +114,19 @@ public class StaxBankAccountBuilder extends AbstractBankAccountBuilder{
             case NAME -> {
                 account.setBankName(data);
             }
+            case TYPE -> {
+                account.setType(AccountDepositTypes.valueOf(data.toUpperCase()));
+            }
             case TIME_CONSTRAINTS -> account.setTimeConstraints(YearMonth.parse(data));
             case COUNTRY -> account.setCountry(data);
             case DEPOSITOR -> account.setDepositor(data);
             case PROFITABILITY -> account.setProfitAbility(data);
             case AMOUNT_ON_DEPOSIT -> account.setAmountOnDeposit(Double.parseDouble(data));
-            case REFILLABLE_ACCOUNT -> {
+            case MONTHLY_ACCRUAL -> {
                 RefillableAccount refillableAccount = (RefillableAccount) account;
                 refillableAccount.setMonthlyAccural(Boolean.parseBoolean(data));
             }
-            case NON_REFILLABLE_ACCOUNT -> {
+            case INTERMEDIATE_ACCRUAL -> {
                 NonRefillableAccount nonRefillableAccount = (NonRefillableAccount) account;
                 nonRefillableAccount.setIntermediateAccural(Boolean.parseBoolean(data));
             }

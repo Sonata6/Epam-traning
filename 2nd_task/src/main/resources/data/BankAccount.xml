@@ -3,7 +3,7 @@
          xmlns="http://www.example.org/accounts"
          xsi:schemaLocation="http://www.example.org/accounts ../data/BankAccountTable.xsd">
 
-    <refillable-account login="qwertyui" worldTopNumber="7"><!--1-->
+    <refillable-account login="qwertyui" world-top-number="7"><!--1-->
         <name>Paribas</name>
         <country>France</country>
         <type>demand</type>
@@ -15,7 +15,7 @@
         <monthly-accrual>false</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qwertydi" worldTopNumber="8"><!--2-->
+    <refillable-account login="qwertydi" world-top-number="8"><!--2-->
         <name>Citigroup</name>
         <country>USA</country>
         <type>time</type>
@@ -27,7 +27,7 @@
         <monthly-accrual>true</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qwfrtyui" worldTopNumber="9"><!--3-->
+    <refillable-account login="qwfrtyui" world-top-number="9"><!--3-->
         <name>Japan Post Bank</name>
         <country>Japan</country>
         <type>settlement</type>
@@ -39,7 +39,7 @@
         <monthly-accrual>false</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qgertyui" worldTopNumber="10"><!--4-->
+    <refillable-account login="qgertyui" world-top-number="10"><!--4-->
         <name>Sumitomo Mitsui Financial Group</name>
         <country>Japan</country>
         <type>accumulative</type>
@@ -51,7 +51,7 @@
         <monthly-accrual>false</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qwehtyui" worldTopNumber="11"><!--5-->
+    <refillable-account login="qwehtyui" world-top-number="11"><!--5-->
         <name>Mizuho Financial Group</name>
         <country>Japan</country>
         <type>savings</type>
@@ -63,7 +63,7 @@
         <monthly-accrual>true</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qwejtyui" worldTopNumber="12"><!--6-->
+    <refillable-account login="qwejtyui" world-top-number="12"><!--6-->
         <name>Banko Santander</name>
         <country>Spain</country>
         <type>metal</type>
@@ -75,7 +75,7 @@
         <monthly-accrual>false</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qkertyui" worldTopNumber="13"><!--7-->
+    <refillable-account login="qkertyui" world-top-number="13"><!--7-->
         <name>Postal Savings Bank of China</name>
         <country>Britain</country>
         <type>demand</type>
@@ -87,7 +87,7 @@
         <monthly-accrual>true</monthly-accrual>
     </refillable-account>
 
-    <refillable-account login="qweltyui" worldTopNumber="14"><!--8-->
+    <refillable-account login="qweltyui" world-top-number="14"><!--8-->
         <name>Societe Generale</name>
         <country>France</country>
         <type>time</type>
@@ -99,7 +99,7 @@
         <monthly-accrual>false</monthly-accrual>
     </refillable-account>
 
-    <non-refillable-account login="qwzrtyui" worldTopNumber="15"><!--9-->
+    <non-refillable-account login="qwzrtyui" world-top-number="15"><!--9-->
         <name>Deutsche Bank</name>
          <country>Germany</country>
         <type>accumulative</type>
@@ -111,7 +111,7 @@
         <intermediate-accrual>true</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="qcertyui" worldTopNumber="16"><!--10-->
+    <non-refillable-account login="qcertyui" world-top-number="16"><!--10-->
         <name>Groupe BPCE</name>
         <country>France</country>
         <type>settlement</type>
@@ -123,7 +123,7 @@
         <intermediate-accrual>false</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="qwextyui" worldTopNumber="0"><!--11-->
+    <non-refillable-account login="qwextyui" world-top-number="0"><!--11-->
         <name>Industrial and Commercial Bank of China</name>
         <country>China</country>
         <type>savings</type>
@@ -135,7 +135,7 @@
         <intermediate-accrual>false</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="qwervyui" worldTopNumber="1"><!--12-->
+    <non-refillable-account login="qwervyui" world-top-number="1"><!--12-->
         <name>Agricultural Bank of China</name>
         <country>China</country>
         <type>metal</type>
@@ -147,7 +147,7 @@
         <intermediate-accrual>false</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="qwbrtyui" worldTopNumber="2"><!--13-->
+    <non-refillable-account login="qwbrtyui" world-top-number="2"><!--13-->
         <name>Paribas</name>
         <country>France</country>
         <type>demand</type>
@@ -159,7 +159,7 @@
         <intermediate-accrual>true</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="nwertyui" worldTopNumber="3"><!--14-->
+    <non-refillable-account login="nwertyui" world-top-number="3"><!--14-->
         <name>China Construction Bank Corporation</name>
         <country>China</country>
         <type>time</type>
@@ -171,7 +171,7 @@
         <intermediate-accrual>false</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="qwmrtyui" worldTopNumber="4"><!--15-->
+    <non-refillable-account login="qwmrtyui" world-top-number="4"><!--15-->
         <name>Bank of China ltd</name>
         <country>China</country>
         <type>settlement</type>
@@ -183,7 +183,7 @@
         <intermediate-accrual>true</intermediate-accrual>
     </non-refillable-account>
 
-    <non-refillable-account login="qwertydf" worldTopNumber="5"><!--16-->
+    <non-refillable-account login="qwertydf" world-top-number="5"><!--16-->
         <name>Bank of China ltd</name>
         <country>Japan</country>
         <type>time</type>

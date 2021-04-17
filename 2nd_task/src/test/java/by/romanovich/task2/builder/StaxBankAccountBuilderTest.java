@@ -13,10 +13,10 @@ import java.net.URISyntaxException;
 import java.time.YearMonth;
 import java.util.List;
 
-public class DomBankAccountBuilderTest {
+public class StaxBankAccountBuilderTest {
     @Test
     public void parseTest() throws BankAccountException, URISyntaxException {
-        DomBankAccountBuilder builder = new DomBankAccountBuilder();
+        StaxBankAccountBuilder builder = new StaxBankAccountBuilder();
         URI uri = getClass().getResource("/data/BankAccount.xml").toURI();
         String absolutePath = new File(uri).getAbsolutePath();
         builder.buildAccounts(absolutePath);
@@ -28,4 +28,3 @@ public class DomBankAccountBuilderTest {
         Assert.assertEquals(expected, actual);
     }
 }
-

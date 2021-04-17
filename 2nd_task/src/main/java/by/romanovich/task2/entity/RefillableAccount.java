@@ -3,7 +3,7 @@ package by.romanovich.task2.entity;
 import java.time.YearMonth;
 import java.util.Objects;
 
-public class RefillableAccount extends AbstractAccount{
+public class RefillableAccount extends AbstractAccount {
     private boolean monthlyAccural;
 
     public RefillableAccount() {
@@ -12,8 +12,9 @@ public class RefillableAccount extends AbstractAccount{
     }
 
     public RefillableAccount(String worldTopNumber, String accountId, String bankName, String country, String depositor,
-                             String profitAbility, YearMonth timeConstraints, double amountOnDeposit, String login, boolean monthlyAccural) {
-        super(worldTopNumber, accountId, bankName, country, depositor, profitAbility, timeConstraints, amountOnDeposit, login);
+                             String profitAbility, YearMonth timeConstraints, double amountOnDeposit, String login, boolean monthlyAccural,
+                             AccountDepositTypes type) {
+        super(worldTopNumber, accountId, bankName, country, depositor, profitAbility, timeConstraints, amountOnDeposit, login, type);
         this.monthlyAccural = monthlyAccural;
     }
 

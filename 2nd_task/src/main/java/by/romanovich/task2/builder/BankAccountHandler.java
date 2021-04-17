@@ -1,115 +1,94 @@
 package by.romanovich.task2.builder;
 
 import by.romanovich.task2.entity.AbstractAccount;
+import by.romanovich.task2.entity.AccountDepositTypes;
 import by.romanovich.task2.entity.NonRefillableAccount;
 import by.romanovich.task2.entity.RefillableAccount;
+import by.romanovich.task2.parameter.BankAccountParameter;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.YearMonth;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 class BankAccountHandler extends DefaultHandler {
+
+    private static final Logger logger = LogManager.getRootLogger();
     private static final char HYPHEN = '-';
     private static final char UNDERSCORE = '_';
 
-    private Set<AbstractAccount> accounts;
-    private EnumSet<BankAccountXmlTag> tagsWithTextContent;
+    private List<AbstractAccount> accounts;
     private AbstractAccount currentAccount;
     private BankAccountXmlTag currentTag;
+    private StringBuilder elementValue;
 
     public BankAccountHandler() {
-        accounts = new HashSet<>();
-        //tagsWithTextContent = EnumSet.range(DeviceXmlTag.NAME, DeviceXmlTag.PERIPHERAL_DEVICE_PORT);
+        accounts = new ArrayList<>();
     }
 
-    public Set<AbstractAccount> getAccounts() {
-        return accounts;
-    }
-
-    @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        String refirableAccountTag = BankAccountXmlTag.MONTHLY_ACCRUAL.toString();
-        String nonRefirableAccountTag = BankAccountXmlTag.INTERMEDIATE_ACCRUAL.toString();
-
-        if (refirableAccountTag.equals(qName) || nonRefirableAccountTag.equals(qName)) {
-            currentAccount = refirableAccountTag.equals(qName)
-                    ? new RefillableAccount()
-                    : new NonRefillableAccount();
-
-            String loginAttribute = BankAccountXmlAttribute.LOGIN.toString();
-            String worldTopNumberAttribute = BankAccountXmlAttribute.WORLDTOPNUMBER.toString();
-
-            for (int i = 0; i < attributes.getLength(); i++) {
-                String attributeName = attributes.getQName(i);
-
-                if (attributeName.equals(loginAttribute) || attributeName.equals((worldTopNumberAttribute))) {  //TODO
-                    String login = attributes.getValue(i);
-                    String worldTopNumber = attributes.getValue(i);
-
-                    currentAccount.setLogin(login);
-                    currentAccount.setWorldTopNumber(worldTopNumber);
-                }
-                else {
-                    String worldTopNumber = attributes.getValue(i);
-                    currentAccount.setWorldTopNumber(worldTopNumber);
-                }
-            }
-//            if (tagsWithTextContent.contains(tag)) {
-//                currentTag = tag;
-//            }
-        }
-    }
-
-    @Override
-    public void endElement(String uri, String localName, String qName) {
-        String refinableAccount = BankAccountXmlTag.REFILLABLE_ACCOUNT.toString();
-        String nonRefirableAccount = BankAccountXmlTag.NON_REFILLABLE_ACCOUNT.toString();
-
-        if (refinableAccount.equals(qName) || nonRefirableAccount.equals(qName)) {
-            accounts.add(currentAccount);
-            currentAccount = null;
-        }
+    public List<AbstractAccount> getAccounts() {
+        return new ArrayList<>(accounts);
     }
 
     @Override
     public void characters(char[] ch, int start, int length) {
-        String data = new String(ch, start, length);
-
-        if (currentTag != null) {
-            switch (currentTag) {
-                case ACCOUNT_ID -> currentAccount.setAccountId(data);
-                case NAME -> currentAccount.setBankName(data);
-
-                case TIME_CONSTRAINTS -> currentAccount.setTimeConstraints(YearMonth.parse(data));
-                case DEPOSITOR -> currentAccount.setDepositor(data);
-                case COUNTRY -> currentAccount.setCountry(data);
-                case PROFITABILITY -> currentAccount.setProfitAbility(data);
-                case AMOUNT_ON_DEPOSIT -> currentAccount.setAmountOnDeposit(Double.parseDouble(data));
-                case REFILLABLE_ACCOUNT -> {
-                    RefillableAccount account = (RefillableAccount) currentAccount;
-                    account.setMonthlyAccural(Boolean.parseBoolean(data));
-                    //CRITICAL -> currentAccount.setCritical(Boolean.parseBoolean(data));
-                }
-                case NON_REFILLABLE_ACCOUNT -> {
-                    NonRefillableAccount account = (NonRefillableAccount) currentAccount;
-                    account.setIntermediateAccural(Boolean.parseBoolean(data));
-                }
-
-                default -> throw new EnumConstantNotPresentException(
-                        currentTag.getDeclaringClass(), currentTag.name());
-            }
-        }
-
-        currentTag = null;
+        elementValue = new StringBuilder();
+        elementValue.append(ch, start, length);
     }
 
-    private String toConstantName(String string) {
-        return string.strip()
-                .replace(HYPHEN, UNDERSCORE)
-                .toUpperCase();
+    @Override
+    public void startDocument() {
+        elementValue = new StringBuilder();
+    }
+
+    @Override
+    public void startElement(String uri, String localName, String qualifiedName, Attributes attributes) {
+        switch (qualifiedName) {
+            case BankAccountParameter.REFILLABLE_ACCOUNT:
+                currentAccount = new RefillableAccount();
+                currentAccount.setLogin(attributes.getValue(0));
+                currentAccount.setWorldTopNumber(attributes.getValue(1));
+                break;
+            case BankAccountParameter.NON_REFILLABLE_ACCOUNT:
+                currentAccount = new NonRefillableAccount();
+                currentAccount.setLogin(attributes.getValue(0));
+                currentAccount.setWorldTopNumber(attributes.getValue(1));
+                break;
+            default:
+                logger.log(Level.DEBUG, qualifiedName);
+                break;
+        }
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qualifiedName) {
+        switch (qualifiedName) {
+            case BankAccountParameter.REFILLABLE_ACCOUNT -> accounts.add(currentAccount);
+            case BankAccountParameter.NON_REFILLABLE_ACCOUNT -> accounts.add(currentAccount);
+            case BankAccountParameter.ACCOUNT_ID -> currentAccount.setAccountId(elementValue.toString());
+            case BankAccountParameter.NAME -> currentAccount.setBankName(elementValue.toString());
+            case BankAccountParameter.TYPE -> {
+                currentAccount.setType(AccountDepositTypes.valueOf(elementValue.toString().toUpperCase()));
+            }
+            case BankAccountParameter.TIME_CONSTRAINTS -> currentAccount.setTimeConstraints(YearMonth.parse(elementValue.toString()));
+            case BankAccountParameter.DEPOSITOR -> currentAccount.setDepositor(elementValue.toString());
+            case BankAccountParameter.COUNTRY -> currentAccount.setCountry(elementValue.toString());
+            case BankAccountParameter.PROFITABILITY -> currentAccount.setProfitAbility(elementValue.toString());
+            case BankAccountParameter.AMOUNT_ON_DEPOSIT -> currentAccount.setAmountOnDeposit(Double.parseDouble(elementValue.toString()));
+            case BankAccountParameter.MONTHLY_ACCRUAL -> {
+                RefillableAccount account = (RefillableAccount) currentAccount;
+                account.setMonthlyAccural(Boolean.parseBoolean(elementValue.toString()));
+            }
+            case BankAccountParameter.INTERMEDIATE_ACCRUAL -> {
+                NonRefillableAccount account = (NonRefillableAccount) currentAccount;
+                account.setIntermediateAccural(Boolean.parseBoolean(elementValue.toString()));
+                break;
+            }
+            default -> logger.log(Level.DEBUG, qualifiedName);
+        }
     }
 }

@@ -1,8 +1,12 @@
-package by.romanovich.task2.builder;
+package by.romanovich.task2.entity;
 
-enum BankAccountXmlAttribute {
-    WORLD_TOP_NUMBER,
-    LOGIN;
+public enum AccountDepositTypes {
+    DEMAND,
+    TIME,
+    SETTLEMENT,
+    ACCUMULATIVE,
+    SAVINGS,
+    METAL;
 
     private static final char HYPHEN = '-';
     private static final char UNDERSCORE = '_';

@@ -30,24 +30,24 @@
             <element name="time-constraints" type="gYearMonth"/>
         </sequence>
         <attribute name="login" type="tns:Login" use="optional"/>
-        <attribute name="worldTopNumber"  type="tns:WorldTopNumber" use="required"/>
+        <attribute name="world-top-number" type="tns:WorldTopNumber" use="required"/>
     </complexType>
 
-        <complexType name="refillableAccount">
-            <complexContent>
-                <extension base="tns:account-type">
-                    <sequence>
-                        <element name="monthly-accrual" type="boolean" />
-                    </sequence>
-                </extension>
-            </complexContent>
-        </complexType>
+    <complexType name="refillableAccount">
+        <complexContent>
+            <extension base="tns:account-type">
+                <sequence>
+                    <element name="monthly-accrual" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
 
     <complexType name="nonRefillableAccount">
         <complexContent>
             <extension base="tns:account-type">
                 <sequence>
-                        <element name="intermediate-accrual" type="boolean" />
+                    <element name="intermediate-accrual" type="boolean"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -68,6 +68,7 @@
 
     <simpleType name="WorldTopNumber">
         <restriction base="int">
+            <pattern value="\d{1,10}"/>
         </restriction>
     </simpleType>
 
@@ -88,123 +89,7 @@
         </restriction>
     </simpleType>
 
-    <element name="account" type="tns:account-type" abstract="true" />
-    <element name="refillable-account" type="tns:refillableAccount" substitutionGroup="tns:account" />
-    <element name="non-refillable-account" type="tns:nonRefillableAccount" substitutionGroup="tns:account" />
+    <element name="account" type="tns:account-type" abstract="true"/>
+    <element name="refillable-account" type="tns:refillableAccount" substitutionGroup="tns:account"/>
+    <element name="non-refillable-account" type="tns:nonRefillableAccount" substitutionGroup="tns:account"/>
 </schema>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<schema xmlns="http://www.w3.org/2001/XMLSchema"-->
-<!--        targetNamespace="http://www.example.org/accounts"-->
-<!--        xmlns:tns="http://www.example.org/accounts"-->
-<!--        elementFormDefault="qualified">-->
-
-
-<!--    <element name="bank-accounts">-->
-<!--        <complexType>-->
-<!--            <sequence>-->
-<!--                <element name="account" type="bank-account" minOccurs="0" maxOccurs="unbounded"/>-->
-<!--            </sequence>-->
-<!--        </complexType>-->
-<!--    </element>-->
-
-
-
-<!--    <complexType name="bank-account">-->
-<!--        <sequence>-->
-<!--            <element name="name" type="string"/>-->
-<!--            <element name="country" type="string"/>-->
-<!--            <element name="type" type="Deposit-types"/>-->
-<!--            <element name="depositor" type="Name"/>-->
-<!--            <element name="account-id" type="AccountId"/>-->
-<!--            <element name="amount-on-deposit" type="string"/>-->
-<!--            <element name="profitability" type="string"/>-->
-<!--            <element name="time-constraints" type="gYearMonth"/>-->
-<!--        </sequence>-->
-<!--        <attribute name="login" type="Login" use="optional"/>-->
-<!--        <attribute name="worldTopNumber"  type="WorldTopNumber" use="required"/>-->
-<!--    </complexType>-->
-
-
-<!--    <complexType name="refillableAccount">-->
-<!--        <complexContent>-->
-<!--            <extension base="bank-account">-->
-<!--                <sequence>-->
-<!--                    <element name="monthly-accrual" type="tns:peripheralDeviceType" />-->
-<!--                    <element name="one-time-accrual" type="tns:peripheralDevicePort" />-->
-<!--                </sequence>-->
-<!--            </extension>-->
-<!--        </complexContent>-->
-<!--    </complexType>-->
-
-<!--    <complexType name="nonRefillableAccount">-->
-<!--        <complexContent>-->
-<!--            <extension base="tns:device">-->
-<!--                <sequence>-->
-<!--                    <element name="intermediate-accrual" type="tns:integralDeviceType" />-->
-<!--                </sequence>-->
-<!--            </extension>-->
-<!--        </complexContent>-->
-<!--    </complexType>-->
-
-
-
-<!--    <simpleType name="Name">-->
-<!--        <restriction base="string">-->
-<!--            <minLength value="2"/>-->
-<!--            <maxLength value="20"/>-->
-<!--        </restriction>-->
-<!--    </simpleType>-->
-
-<!--    <simpleType name="Login">-->
-<!--        <restriction base="ID">-->
-<!--            <pattern value="\w{1,16}"/>-->
-<!--        </restriction>-->
-<!--    </simpleType>-->
-
-<!--    <simpleType name="WorldTopNumber">-->
-<!--        <restriction base="int">-->
-<!--        </restriction>-->
-<!--    </simpleType>-->
-
-<!--    <simpleType name="AccountId">-->
-<!--        <restriction base="string">-->
-<!--        </restriction>-->
-<!--    </simpleType>-->
-
-
-<!--    <simpleType name="Deposit-types">-->
-<!--        <restriction base="string">-->
-<!--            <enumeration value="demand"/>-->
-<!--            <enumeration value="time"/>-->
-<!--            <enumeration value="settlement"/>-->
-<!--            <enumeration value="accumulative"/>-->
-<!--            <enumeration value="savings"/>-->
-<!--            <enumeration value="metal"/>-->
-<!--        </restriction>-->
-<!--    </simpleType>-->
-
-<!--    <element name="bank-account" type="bank-account" abstract="true" />-->
-<!--    <element name="integral-device" type="refillableAccount" substitutionGroup="bank-account" />-->
-<!--    <element name="peripheral-device" type="nonRefillableAccount" substitutionGroup="bank-account" />-->
-<!--</schema>-->

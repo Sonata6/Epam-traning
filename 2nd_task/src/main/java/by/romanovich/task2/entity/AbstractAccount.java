@@ -11,14 +11,18 @@ public abstract class AbstractAccount {
     private String depositor;
     private String profitAbility;
     private YearMonth timeConstraints;
-        private double amountOnDeposit;
+    private AccountDepositTypes type;
+    private double amountOnDeposit;
     private String login;
 
-    public AbstractAccount(){
+    public AbstractAccount() {
 
     }
+
     public AbstractAccount(String worldTopNumber, String accountId, String bankName, String country, String depositor,
-                           String profitAbility, YearMonth timeConstraints, double amountOnDeposit, String login) {
+                           String profitAbility, YearMonth timeConstraints, double amountOnDeposit, String login,
+                           AccountDepositTypes type) {
+        this.type = type;
         this.worldTopNumber = worldTopNumber;
         this.accountId = accountId;
         this.bankName = bankName;
@@ -28,6 +32,14 @@ public abstract class AbstractAccount {
         this.timeConstraints = timeConstraints;
         this.amountOnDeposit = amountOnDeposit;
         this.login = login;
+    }
+
+    public AccountDepositTypes getType() {
+        return type;
+    }
+
+    public void setType(AccountDepositTypes type) {
+        this.type = type;
     }
 
     public String getWorldTopNumber() {
@@ -103,22 +115,26 @@ public abstract class AbstractAccount {
         this.login = login;
     }
 
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
-            }
-            AbstractAccount banks = (AbstractAccount) obj;
-
-            return  this.accountId == banks.accountId &&
-                    this.amountOnDeposit == banks.amountOnDeposit &&
-                    Objects.equals(worldTopNumber, banks.worldTopNumber) &&
-                    Objects.equals(bankName, banks.bankName) &&
-                    Objects.equals(depositor, banks.depositor) &&
-                    Objects.equals(timeConstraints, banks.timeConstraints);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        AbstractAccount banks = (AbstractAccount) obj;
+
+        return this.amountOnDeposit == banks.amountOnDeposit &&
+                accountId.equals(banks.accountId) &&
+                worldTopNumber.equals(banks.worldTopNumber) &&
+                bankName.equals(banks.bankName) &&
+                depositor.equals(banks.depositor) &&
+                timeConstraints.equals(banks.timeConstraints) &&
+                country.equals(banks.country) &&
+                profitAbility.equals(banks.profitAbility) &&
+                type.equals(banks.type) &&
+                login.equals(banks.login);
+    }
 
     @Override
     public int hashCode() {
@@ -134,13 +150,13 @@ public abstract class AbstractAccount {
         final StringBuilder sb = new StringBuilder("\nNumber in the worlds top: ");
         sb.append(worldTopNumber).append("\nLogin: ").append(login);
         sb.append("\nAccount id: ").append(accountId);
-        sb.append("\nBank name: ").append(bankName );
+        sb.append("\nBank name: ").append(bankName);
         sb.append("\nLogin: ").append(login);
         sb.append("\nCountry: ").append(country);
-        sb.append("\nDepositor: ").append(depositor );
+        sb.append("\nDepositor: ").append(depositor);
         sb.append("\nProfitability: ").append(profitAbility);
         sb.append("\nTime constraints: ").append(timeConstraints);
-        sb.append("\nAmount on deposit: ").append(amountOnDeposit );
+        sb.append("\nAmount on deposit: ").append(amountOnDeposit);
         return sb.toString();
     }
 }

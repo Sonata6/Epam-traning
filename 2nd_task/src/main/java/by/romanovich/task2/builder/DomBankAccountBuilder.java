@@ -1,6 +1,7 @@
 package by.romanovich.task2.builder;
 
 import by.romanovich.task2.entity.AbstractAccount;
+import by.romanovich.task2.entity.AccountDepositTypes;
 import by.romanovich.task2.entity.NonRefillableAccount;
 import by.romanovich.task2.entity.RefillableAccount;
 import by.romanovich.task2.exception.BankAccountException;
@@ -65,7 +66,7 @@ public class DomBankAccountBuilder extends AbstractBankAccountBuilder{
 
     private void buildEntity(Element element, AbstractAccount account) {
         String loginAttribute = BankAccountXmlAttribute.LOGIN.toString();
-        String worldTopNumberAttribute = BankAccountXmlAttribute.WORLDTOPNUMBER.toString();
+        String worldTopNumberAttribute = BankAccountXmlAttribute.WORLD_TOP_NUMBER.toString();
         String accountIdTag = BankAccountXmlTag.ACCOUNT_ID.toString();
         String bankNameTag = BankAccountXmlTag.NAME.toString();
         String countryTag = BankAccountXmlTag.COUNTRY.toString();
@@ -73,7 +74,9 @@ public class DomBankAccountBuilder extends AbstractBankAccountBuilder{
         String profitabilityTag = BankAccountXmlTag.PROFITABILITY.toString();
         String timeConstraintsTag = BankAccountXmlTag.TIME_CONSTRAINTS.toString();
         String amountOnDepositTag = BankAccountXmlTag.AMOUNT_ON_DEPOSIT.toString();
+        String typeTag = BankAccountXmlTag.TYPE.toString();
 
+        AccountDepositTypes type = AccountDepositTypes.valueOf(getElementTextContent(element, typeTag).toUpperCase());
         String login = element.getAttribute(loginAttribute);
         String worldTopNumber = element.getAttribute(worldTopNumberAttribute);
         String accountId = getElementTextContent(element, accountIdTag);
@@ -84,6 +87,7 @@ public class DomBankAccountBuilder extends AbstractBankAccountBuilder{
         String depositor = getElementTextContent(element, depositorTag);
         String profitability = getElementTextContent(element, profitabilityTag);
 
+        account.setType(type);
         account.setLogin(login);
         account.setWorldTopNumber(worldTopNumber);
         account.setAccountId(accountId);
