@@ -5,6 +5,9 @@ import by.romanovich.task2.entity.AccountDepositTypes;
 import by.romanovich.task2.entity.NonRefillableAccount;
 import by.romanovich.task2.entity.RefillableAccount;
 import by.romanovich.task2.exception.BankAccountException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,7 +22,7 @@ import java.time.YearMonth;
 
 public class DomBankAccountBuilder extends AbstractBankAccountBuilder{
     private DocumentBuilder documentBuilder;
-
+    private static final Logger logger = LogManager.getRootLogger();
     public DomBankAccountBuilder() throws BankAccountException {
         super();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -34,7 +37,7 @@ public class DomBankAccountBuilder extends AbstractBankAccountBuilder{
     @Override
     public void buildAccounts(String xmlPath) throws BankAccountException {
         Document document;
-
+        logger.log(Level.DEBUG, "Building bank accounts.");
         try {
             document = documentBuilder.parse(xmlPath);
             Element root = document.getDocumentElement();
@@ -65,6 +68,7 @@ public class DomBankAccountBuilder extends AbstractBankAccountBuilder{
     }
 
     private void buildEntity(Element element, AbstractAccount account) {
+        logger.log(Level.DEBUG, "Building entity.");
         String loginAttribute = BankAccountXmlAttribute.LOGIN.toString();
         String worldTopNumberAttribute = BankAccountXmlAttribute.WORLD_TOP_NUMBER.toString();
         String accountIdTag = BankAccountXmlTag.ACCOUNT_ID.toString();

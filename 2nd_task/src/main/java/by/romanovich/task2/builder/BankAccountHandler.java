@@ -18,12 +18,9 @@ import java.util.List;
 class BankAccountHandler extends DefaultHandler {
 
     private static final Logger logger = LogManager.getRootLogger();
-    private static final char HYPHEN = '-';
-    private static final char UNDERSCORE = '_';
 
     private List<AbstractAccount> accounts;
     private AbstractAccount currentAccount;
-    private BankAccountXmlTag currentTag;
     private StringBuilder elementValue;
 
     public BankAccountHandler() {
@@ -47,6 +44,7 @@ class BankAccountHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qualifiedName, Attributes attributes) {
+        logger.log(Level.DEBUG, "initializing start elements.");
         switch (qualifiedName) {
             case BankAccountParameter.REFILLABLE_ACCOUNT:
                 currentAccount = new RefillableAccount();
@@ -66,6 +64,7 @@ class BankAccountHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qualifiedName) {
+        logger.log(Level.DEBUG, "initializing end elements.");
         switch (qualifiedName) {
             case BankAccountParameter.REFILLABLE_ACCOUNT -> accounts.add(currentAccount);
             case BankAccountParameter.NON_REFILLABLE_ACCOUNT -> accounts.add(currentAccount);

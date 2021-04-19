@@ -53,6 +53,6 @@ public class NonRefillableAccount extends AbstractAccount {
 
     @Override
     public String toString() {
-        return super.toString() + "; deviceType = " + intermediateAccural;
+        return super.toString() + "; accountType = " + intermediateAccural;
     }
 }

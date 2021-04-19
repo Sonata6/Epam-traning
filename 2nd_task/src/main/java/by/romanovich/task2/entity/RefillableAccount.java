@@ -53,6 +53,6 @@ public class RefillableAccount extends AbstractAccount {
 
     @Override
     public String toString() {
-        return super.toString() + "; deviceType = " + monthlyAccural;
+        return super.toString() + "; accountType = " + monthlyAccural;
     }
 }

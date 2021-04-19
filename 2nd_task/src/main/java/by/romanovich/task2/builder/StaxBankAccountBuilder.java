@@ -5,6 +5,9 @@ import by.romanovich.task2.entity.AccountDepositTypes;
 import by.romanovich.task2.entity.NonRefillableAccount;
 import by.romanovich.task2.entity.RefillableAccount;
 import by.romanovich.task2.exception.BankAccountException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -19,7 +22,7 @@ import java.util.Optional;
 public class StaxBankAccountBuilder extends AbstractBankAccountBuilder {
     private static final char HYPHEN = '-';
     private static final char UNDERSCORE = '_';
-
+    private static final Logger logger = LogManager.getRootLogger();
     private final String REFILLABLE_ACCOUNT_TAG;
     private final String NON_REFILLABLE_ACCOUNT_TAG;
 
@@ -34,7 +37,7 @@ public class StaxBankAccountBuilder extends AbstractBankAccountBuilder {
     @Override
     public void buildAccounts(String xmlPath) throws BankAccountException {
         File file = new File(xmlPath);
-
+        logger.log(Level.DEBUG, "Building Stax accounts.");
         if (!file.exists() || file.isDirectory()) {
             throw new BankAccountException("Unable to open file with path: " + xmlPath);
         }
@@ -101,7 +104,7 @@ public class StaxBankAccountBuilder extends AbstractBankAccountBuilder {
             }
         }
 
-        throw new BankAccountException("Unable to build Device object");
+        throw new BankAccountException("Unable to build Account object");
     }
 
     private void initializeField(XMLStreamReader reader, BankAccountXmlTag tag, AbstractAccount account)
