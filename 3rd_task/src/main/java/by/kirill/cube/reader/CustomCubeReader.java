@@ -2,6 +2,7 @@ package by.kirill.cube.reader;
 
 import by.kirill.cube.exception.CustomCubeException;
 import by.kirill.cube.validation.CustomCubeValidator;
+import by.kirill.cube.validation.FileValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,27 +23,21 @@ public class CustomCubeReader
 {
     private static Logger logger = LogManager.getLogger();
 
-    public List<String> readFromFile(Path filepath) throws CustomCubeException {
-        List<String> lines;
-        List<String> correctLines = new ArrayList<>();
-        Path path = Paths.get(String.valueOf(filepath));
+    public List<String> readFromFile(String filepath) throws CustomCubeException {
+        Path path = createFilePath(filepath);
         if (Files.notExists(path)) {
             logger.log(Level.ERROR, "File path problems");
             throw new CustomCubeException("No file found in this path");
-        }
-        try (Stream<String> lineStream = Files.newBufferedReader(path).lines()) {
-            lines = lineStream.collect(Collectors.toList());
-            for (String line : lines) {
-                if (CustomCubeValidator.validateString(line)) {
-                    correctLines.add(line);
-                }
-            }
+        };
+        List<String> correctLines  = new ArrayList<>();
+        try (Stream<String> stream = Files.lines(path)) {
+            correctLines = stream.filter(FileValidator::validateString).collect(Collectors.toList());
             if (correctLines == null) {
                 logger.log(Level.ERROR, "Incorrect data");
                 throw new CustomCubeException("No valid array exist");
             }
         } catch (IOException e) {
-            logger.log(Level.ERROR, "Incorrect path");
+            logger.log(Level.ERROR, "Problem with file reading by path: \'{}\' occured", path);
             throw new CustomCubeException("File open Error");
         }
         logger.log(Level.INFO, "Number of cubes: " + correctLines.size());
@@ -65,7 +60,7 @@ public class CustomCubeReader
     }
 
     private void filePathCheck(Path path) throws CustomCubeException {
-        if (!CustomCubeValidator.validateFilePath(path)) {
+        if (!FileValidator.validateFilePath(path)) {
             throw new CustomCubeException("File by path: \'" + path.toString() + "\'is not exist");
         }
     }

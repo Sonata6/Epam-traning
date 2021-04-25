@@ -1,5 +1,9 @@
 package by.kirill.cube.repository;
 
+import by.kirill.cube.entity.AbstractFigure;
+
 public interface Specification {
-    //add 5+- specifications
+
+    boolean specify(AbstractFigure abstractFigure);
+
 }

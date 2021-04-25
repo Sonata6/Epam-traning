@@ -3,3 +3,20 @@
 2021-04-12 17:49:40 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 1
 2021-04-12 17:49:57 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 1
 2021-04-12 17:53:55 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 1
+2021-04-25 20:42:24 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:43:01 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:45:17 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:46:02 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:46:57 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:47:20 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:48:13 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-04-25 20:49:27 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:49:38 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:50:18 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:52:17 [main] ERROR by.kirill.cube.reader.CustomCubeReader- File path problems
+2021-04-25 20:53:40 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 2
+2021-04-25 20:54:27 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-04-25 20:54:54 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-04-25 20:54:59 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-04-25 20:54:59 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 2
+2021-04-25 20:54:59 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems

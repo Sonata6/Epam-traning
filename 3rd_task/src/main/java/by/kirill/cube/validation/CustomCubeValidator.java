@@ -14,26 +14,12 @@ public class CustomCubeValidator {
 
     private static Logger logger = LogManager.getLogger();
 
-//    public static boolean validateNotNullOrEmpty(CustomCube customCube) {
-//        if (customCube.get() == null || customArray.getArray().length == 0) {
-//            logger.log(Level.ERROR, "incorrect CustomArray: cannot be null or empty");
-//            return false;
-//        }
-//        return true;
-//    }
-
-    public static boolean validateString(String line) {
-        Pattern pattern = Pattern.compile("^-?\\d{1,10}((,)?(\\s)(-?)\\d{1,10})*$");
-        Matcher matcher = pattern.matcher(line);
-        if (matcher.find()) {
-            return true;
+    public static boolean validateNotNullOrEmpty(CustomCube customCube) {
+        if (customCube.getId() == 0 || customCube.getFirstPoint() == null || customCube.getSecondPoint() == null) {
+            logger.log(Level.ERROR, "Incorrect CustomCube: cannot be null or empty");
+            return false;
         }
-        return false;
-    }
-
-    public static boolean validateFilePath(Path path) {
-
-        return !Files.notExists(path);
+        return true;
     }
 
 }

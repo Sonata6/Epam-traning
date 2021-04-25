@@ -1,121 +1,116 @@
 package by.kirill.cube.entity;
 
 
-public class CustomCube {
+import by.kirill.cube.observer.CustomCubeEvent;
+import by.kirill.cube.observer.Observable;
+import by.kirill.cube.observer.Observer;
 
-    private String id;
-    private CustomPoint a;
-    private CustomPoint b;
-    private CustomPoint c;
-    private CustomPoint d;
-    private CustomPoint a1;
-    private CustomPoint b1;
-    private CustomPoint c1;
-    private CustomPoint d1;
+import java.util.ArrayList;
 
-    public String getId() {
-        return id;
+public class CustomCube extends AbstractFigure implements Observable {
+
+
+    private CustomPoint firstPoint;
+    private CustomPoint secondPoint;
+    private ArrayList<Observer> observers = new ArrayList<>();
+
+
+    public CustomCube() {
+        this.firstPoint = new CustomPoint(0, 0, 0);
+        this.secondPoint = new CustomPoint(0, 0, 0);
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public CustomCube(CustomPoint firstPoint, CustomPoint secondPoint) {
+        this.firstPoint = firstPoint;
+        this.secondPoint = secondPoint;
     }
 
-    public CustomPoint getA() {
-        return a;
+    public CustomCube(CustomCube customCube) {
+        super(customCube);
+        this.firstPoint.setX(customCube.getFirstPoint().getX());
+        this.firstPoint.setY(customCube.getSecondPoint().getY());
+        this.firstPoint.setZ(customCube.getFirstPoint().getZ());
+        this.secondPoint.setX(customCube.getSecondPoint().getX());
+        this.secondPoint.setY(customCube.getSecondPoint().getY());
+        this.secondPoint.setZ(customCube.getSecondPoint().getZ());
     }
 
-    public void setA(CustomPoint a) {
-        this.a = a;
+    public CustomPoint getFirstPoint() {
+        return firstPoint;
     }
 
-    public CustomPoint getB() {
-        return b;
+    public void setFirstPoint(CustomPoint firstPoint) {
+
+        this.firstPoint = firstPoint;
+        notifyObservers();
     }
 
-    public void setB(CustomPoint b) {
-        this.b = b;
+    public CustomPoint getSecondPoint() {
+        return secondPoint;
     }
 
-    public CustomPoint getC() {
-        return c;
+    public void setSecondPoint(CustomPoint secondPoint) {
+
+        this.secondPoint = secondPoint;
+        notifyObservers();
     }
 
-    public void setC(CustomPoint c) {
-        this.c = c;
+    @Override
+    public void attach(Observer observer) {
+        observers.add(observer);
     }
 
-    public CustomPoint getD() {
-        return d;
+    @Override
+    public void detach(Observer observer) {
+        observers.remove(observer);
     }
 
-    public void setD(CustomPoint d) {
-        this.d = d;
+    @Override
+    public void notifyObservers() {
+        CustomCubeEvent event = new CustomCubeEvent(this);
+        if (!observers.isEmpty()) {
+            for (Observer observer : observers) {
+                observer.updateSurfaceArea(event);
+                observer.updateVolume(event);
+            }
+        }
     }
 
-    public CustomPoint getA1() {
-        return a1;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        CustomCube that = (CustomCube) o;
+        return super.equals(firstPoint) && super.equals(secondPoint);
     }
-
-    public void setA1(CustomPoint a1) {
-        this.a1 = a1;
-    }
-
-    public CustomPoint getB1() {
-        return b1;
-    }
-
-    public void setB1(CustomPoint b1) {
-        this.b1 = b1;
-    }
-
-    public CustomPoint getC1() {
-        return c1;
-    }
-
-    public void setC1(CustomPoint c1) {
-        this.c1 = c1;
-    }
-
-    public CustomPoint getD1() {
-        return d1;
-    }
-
-    public void setD1(CustomPoint d1) {
-        this.d1 = d1;
-    }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        CustomCube that = (CustomCube) o;
-//        return Objects.equals(id, that.id) && Objects.equals(a, that.a) && Objects.equals(b, that.b) && Objects.equals(c, that.c) && Objects.equals(d, that.d) && Objects.equals(a1, that.a1) && Objects.equals(b1, that.b1) && Objects.equals(c1, that.c1) && Objects.equals(d1, that.d1);
-//    }
 
     @Override
     public int hashCode() {
-        if (id == null) {
-            return 0;
-        }
-        int result = 31 * (a.getX() + b.getY() + c.getZ() + a1.getZ() +
-                b1.getY() + c1.getX()) + Integer.parseInt(id);
-        return result;
+        return (firstPoint.getX() >> 16) ^ (secondPoint.getX() >> 16) ^ (firstPoint.getY() >> 8) ^
+                (secondPoint.getY() >> 8) ^ firstPoint.getZ() ^ secondPoint.getZ() | super.hashCode();
     }
 
     @Override
-    public String
-    toString() {
-        return "CustomCube{" +
-                "id='" + id + '\'' +
-                ", a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                ", d=" + d +
-                ", a1=" + a1 +
-                ", b1=" + b1 +
-                ", c1=" + c1 +
-                ", d1=" + d1 +
-                '}';
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder("First Point: [x=");
+        stringBuilder.append(firstPoint.getX());
+        stringBuilder.append(", y=");
+        stringBuilder.append(firstPoint.getY());
+        stringBuilder.append(", z=");
+        stringBuilder.append(firstPoint.getZ());
+        stringBuilder.append("]");
+        stringBuilder.append("Second Point: [x=");
+        stringBuilder.append(secondPoint.getX());
+        stringBuilder.append(", y=");
+        stringBuilder.append(secondPoint.getY());
+        stringBuilder.append(", z=");
+        stringBuilder.append(secondPoint.getZ());
+        stringBuilder.append("]");
+        String result = stringBuilder.toString();
+        return result;
     }
 }
