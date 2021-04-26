@@ -1,13 +1,14 @@
 package by.kirill.cube.entity;
 
 
+import by.kirill.cube.exception.CustomCubeException;
 import by.kirill.cube.observer.CustomCubeEvent;
 import by.kirill.cube.observer.Observable;
 import by.kirill.cube.observer.Observer;
 
 import java.util.ArrayList;
 
-public class CustomCube extends AbstractFigure implements Observable {
+public class CustomCube extends Figure implements Observable {
 
 
     private CustomPoint firstPoint;
@@ -39,7 +40,7 @@ public class CustomCube extends AbstractFigure implements Observable {
         return firstPoint;
     }
 
-    public void setFirstPoint(CustomPoint firstPoint) {
+    public void setFirstPoint(CustomPoint firstPoint) throws CustomCubeException {
 
         this.firstPoint = firstPoint;
         notifyObservers();
@@ -49,7 +50,7 @@ public class CustomCube extends AbstractFigure implements Observable {
         return secondPoint;
     }
 
-    public void setSecondPoint(CustomPoint secondPoint) {
+    public void setSecondPoint(CustomPoint secondPoint) throws CustomCubeException {
 
         this.secondPoint = secondPoint;
         notifyObservers();
@@ -66,7 +67,7 @@ public class CustomCube extends AbstractFigure implements Observable {
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers() throws CustomCubeException {
         CustomCubeEvent event = new CustomCubeEvent(this);
         if (!observers.isEmpty()) {
             for (Observer observer : observers) {

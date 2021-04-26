@@ -7,21 +7,21 @@ import by.kirill.cube.util.IdGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbstractFigure {
+public class Figure {
     private long id;
     private String name;
     private List<Observer> observers = new ArrayList<>();
 
-    protected AbstractFigure() {
+    protected Figure() {
         this.id = IdGenerator.generateNextId();
     }
 
-    protected AbstractFigure(String name) {
+    protected Figure(String name) {
         this.id = IdGenerator.generateNextId();
         this.name = name;
     }
 
-    protected AbstractFigure(AbstractFigure figure) {
+    protected Figure(Figure figure) {
         this.id = figure.id;
         this.name = figure.name;
     }
@@ -67,7 +67,7 @@ public class AbstractFigure {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AbstractFigure other = (AbstractFigure) obj;
+        Figure other = (Figure) obj;
         if (id != other.id) {
             return false;
         }

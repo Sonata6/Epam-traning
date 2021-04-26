@@ -28,6 +28,7 @@ public class Warehouse {
     }
 
     public FigureParameters get(Long id) {  //TODO return copy of map
+
         return map.get(id);
     }
 

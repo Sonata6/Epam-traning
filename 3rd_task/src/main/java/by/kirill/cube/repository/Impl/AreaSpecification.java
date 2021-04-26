@@ -1,8 +1,9 @@
 package by.kirill.cube.repository.Impl;
 
 import by.kirill.cube.action.CubeCalculateAction;
-import by.kirill.cube.entity.AbstractFigure;
+import by.kirill.cube.entity.Figure;
 import by.kirill.cube.entity.CustomCube;
+import by.kirill.cube.exception.CustomCubeException;
 import by.kirill.cube.repository.Specification;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +24,7 @@ public class AreaSpecification implements Specification {
     }
 
     @Override
-    public boolean specify(AbstractFigure figure) {
+    public boolean specify(Figure figure) throws CustomCubeException {
         String className = figure.getClass().getSimpleName();
         boolean result = false;
         switch (className) {

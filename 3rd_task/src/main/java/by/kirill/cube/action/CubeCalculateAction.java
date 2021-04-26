@@ -2,6 +2,7 @@ package by.kirill.cube.action;
 
 import by.kirill.cube.entity.CustomCube;
 import by.kirill.cube.exception.CustomCubeException;
+import by.kirill.cube.validation.CustomCubeValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,21 +11,28 @@ public class CubeCalculateAction {
 
     private static Logger logger = LogManager.getLogger();
 
-    public double calculateArea(CustomCube customCube)
-    {
+    public double calculateArea(CustomCube customCube) throws CustomCubeException {
+        if(CustomCubeValidator.validateNotNullOrEmpty(customCube)) {
+            throw new CustomCubeException("Object must be inialized");
+        }
         double area = Math.pow(((customCube.getFirstPoint().getZ() - customCube.getSecondPoint().getZ()) / Math.sqrt(3)),2) * 6;
         logger.log(Level.INFO, "Cube area:" + area);
         return area;
     }
 
-    public double calculateVolume(CustomCube customCube)
-    {
+    public double calculateVolume(CustomCube customCube) throws CustomCubeException {
+        if(CustomCubeValidator.validateNotNullOrEmpty(customCube)) {
+            throw new CustomCubeException("Object must be inialized");
+        }
         int volume = (int)Math.pow(((customCube.getSecondPoint().getZ() - customCube.getFirstPoint().getZ()) / Math.sqrt(3)),3);
         logger.log(Level.INFO, "Cube volume" + volume);
         return volume;
     }
 
     public double calculateRatio(CustomCube customCube) throws CustomCubeException {
+        if(CustomCubeValidator.validateNotNullOrEmpty(customCube)) {
+            throw new CustomCubeException("Object must be inialized");
+        }
         double ratio = 0;
         if(customCube.getFirstPoint().getX()*customCube.getSecondPoint().getX() < 0) {
             ratio = (double)(customCube.getSecondPoint().getY()) / (customCube.getFirstPoint().getY());

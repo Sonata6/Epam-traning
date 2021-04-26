@@ -1,6 +1,6 @@
 package by.kirill.cube.repository.Impl;
 
-import by.kirill.cube.entity.AbstractFigure;
+import by.kirill.cube.entity.Figure;
 import by.kirill.cube.repository.Specification;
 
 public class IdSpecification implements Specification {
@@ -12,8 +12,8 @@ public class IdSpecification implements Specification {
     }
 
     @Override
-    public boolean specify(AbstractFigure abstractFigure) {
-        boolean result = abstractFigure.getId() == this.id;
+    public boolean specify(Figure figure) {
+        boolean result = figure.getId() == this.id;
         return result;
     }
 

@@ -1,7 +1,7 @@
 package by.kirill.cube.repository;
 
-import by.kirill.cube.entity.AbstractFigure;
 import by.kirill.cube.entity.CustomCube;
+import by.kirill.cube.exception.CustomCubeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Repository {
@@ -70,7 +69,7 @@ public class Repository {
         return result;
     }
 
-    public List<CustomCube> queryStream(Specification specification) {
+    public List<CustomCube> queryStream(Specification specification) throws CustomCubeException {
         return customCubeList.stream().filter(specification::specify).collect(Collectors.toList());
     }
 

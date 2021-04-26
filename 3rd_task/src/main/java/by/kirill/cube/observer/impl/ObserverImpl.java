@@ -15,7 +15,7 @@ public class ObserverImpl implements Observer {
     private static Logger logger = LogManager.getLogger();
 
     @Override
-    public void updateSurfaceArea(CustomCubeEvent customCubeEvent) {
+    public void updateSurfaceArea(CustomCubeEvent customCubeEvent) throws CustomCubeException {
         CustomCube customCube = customCubeEvent.getSource();
         long id = customCube.getId();
         Warehouse warehouse = Warehouse.getInstance();
@@ -26,7 +26,7 @@ public class ObserverImpl implements Observer {
     }
 
     @Override
-    public void updateVolume(CustomCubeEvent customCubeEvent) {
+    public void updateVolume(CustomCubeEvent customCubeEvent) throws CustomCubeException {
         CustomCube cone = customCubeEvent.getSource();
         long id = cone.getId();
         Warehouse warehouse = Warehouse.getInstance();

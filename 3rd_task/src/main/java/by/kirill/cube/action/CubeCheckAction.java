@@ -1,10 +1,15 @@
 package by.kirill.cube.action;
 
 import by.kirill.cube.entity.CustomCube;
+import by.kirill.cube.exception.CustomCubeException;
+import by.kirill.cube.validation.CustomCubeValidator;
 
 public class CubeCheckAction {
 
-    public boolean isCube(CustomCube customCube) {
+    public boolean isCube(CustomCube customCube) throws CustomCubeException {
+        if(CustomCubeValidator.validateNotNullOrEmpty(customCube)) {
+            throw new CustomCubeException("Object must be inialized");
+        }
         boolean isCube = false;
         int side = customCube.getSecondPoint().getX() - customCube.getFirstPoint().getX();
         int lenghtToX = customCube.getFirstPoint().getX();
@@ -20,7 +25,10 @@ public class CubeCheckAction {
     }
 
 
-    public boolean onAxis(CustomCube customCube) {
+    public boolean onAxis(CustomCube customCube) throws CustomCubeException {
+        if(CustomCubeValidator.validateNotNullOrEmpty(customCube)) {
+            throw new CustomCubeException("Object must be inialized");
+        }
         boolean onAxis = false;
 
         if(customCube.getFirstPoint().getX() == 0 || customCube.getFirstPoint().getY() == 0 ||
