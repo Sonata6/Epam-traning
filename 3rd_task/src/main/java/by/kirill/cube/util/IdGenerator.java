@@ -8,7 +8,7 @@ public class IdGenerator {
     }
 
     public static int generateNextId() {
-        counter = counter + 1;
+        counter++;
         return counter;
     }
 

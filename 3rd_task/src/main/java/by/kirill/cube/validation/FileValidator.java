@@ -16,8 +16,8 @@ public class FileValidator {
         // || resultRegularPolygon;
     }
 
-    public static boolean validateFilePath(Path path) {
-        return !Files.notExists(path);
-    }
+//    public static boolean validateFilePath(Path path) {
+//        return !Files.notExists(path);
+//    }
 
 }
