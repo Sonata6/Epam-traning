@@ -3,7 +3,6 @@ package by.kirill.cube.repository.Impl;
 import by.kirill.cube.action.CubeCalculateAction;
 import by.kirill.cube.entity.Figure;
 import by.kirill.cube.entity.CustomCube;
-import by.kirill.cube.exception.CustomCubeException;
 import by.kirill.cube.repository.Specification;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +22,7 @@ public class VolumeSpecification implements Specification {
     }
 
     @Override
-    public boolean specify(Figure figure) throws CustomCubeException {
+    public boolean specify(Figure figure) {
         String className = figure.getClass().getSimpleName();
         boolean result = false;
         switch (className) {

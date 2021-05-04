@@ -20,3 +20,95 @@
 2021-04-25 20:54:59 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
 2021-04-25 20:54:59 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 2
 2021-04-25 20:54:59 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 00:10:35 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:8.000000000000002
+2021-05-04 00:10:35 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:8.000000000000002
+2021-05-04 00:10:35 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume1
+2021-05-04 00:10:35 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume1
+2021-05-04 00:11:00 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:8.000000000000002
+2021-05-04 00:35:37 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 00:35:37 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 00:35:37 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 00:35:37 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 00:40:43 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 00:41:19 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 00:41:19 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 00:41:19 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 00:41:19 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 00:43:29 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 00:43:29 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 00:45:44 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 00:45:48 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 14:13:08 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=1, y=1, z=1]Second Point: [x=2, y=2, z=2] was created
+2021-05-04 14:13:55 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=0, y=0, z=0]Second Point: [x=4, y=4, z=4] was created
+2021-05-04 14:14:26 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=0, y=0, z=0]Second Point: [x=4, y=4, z=4] was created
+2021-05-04 14:26:08 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=0, y=0, z=0]Second Point: [x=4, y=4, z=4] was created
+2021-05-04 15:04:06 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 15:04:21 [main] ERROR by.kirill.cube.reader.CustomCubeReader- There is file path problems
+2021-05-04 20:38:01 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 20:38:01 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 20:38:01 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 20:38:01 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 20:39:23 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=0, y=0, z=0]Second Point: [x=4, y=4, z=4] was created
+2021-05-04 21:13:46 [main] INFO  by.kirill.cube.reader.CustomCubeReader- Number of cubes: 2
+2021-05-04 21:56:20 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:56:57 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:57:05 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:57:26 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:58:42 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:59:08 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:59:16 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 21:59:30 [main] INFO  by.kirill.cube.repository.Repository- creating singleton repository
+2021-05-04 22:09:04 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:09:05 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:09:05 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:09:05 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:09:05 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:09:20 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:09:21 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:09:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:09:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:09:23 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:09:40 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:09:40 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:09:43 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:09:43 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:09:51 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:10:04 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:10:05 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:10:05 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:10:05 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:10:23 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:10:43 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:10:44 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:10:44 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:10:44 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:10:53 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:13:58 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:13:58 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:13:59 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:13:59 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:14:36 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:14:44 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:14:44 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:14:44 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:14:44 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:15:49 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:17:12 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:20:38 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:20:38 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:20:38 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:20:38 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:20:42 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:21:00 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:21:07 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:21:09 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:25:19 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.factory.FigureFactory- new cube First Point: [x=4, y=4, z=4]Second Point: [x=6, y=6, z=6] was created
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.entity.Warehouse- creating singleton warehouse
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:24.0
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume8
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0
+2021-05-04 22:25:22 [main] INFO  kirill.cube.observer.impl.ObserverImpl-  Area 6.0 was changed
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube volume1
+2021-05-04 22:25:22 [main] INFO  kirill.cube.observer.impl.ObserverImpl- Volume area 1.0 was chanched
+2021-05-04 22:25:22 [main] INFO  by.kirill.cube.action.CubeCalculateAction- Cube area:6.0

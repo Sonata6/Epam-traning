@@ -1,6 +1,6 @@
 package by.kirill.cube.entity;
 
-public class FigureParameters {
+public class FigureParameter {
 
     private double volume;
     private double surfaceArea;
@@ -25,7 +25,7 @@ public class FigureParameters {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FigureParameters that = (FigureParameters) o;
+        FigureParameter that = (FigureParameter) o;
         return Double.compare(that.surfaceArea, surfaceArea) == 0 &&
                 Double.compare(that.volume, volume) == 0;
     }

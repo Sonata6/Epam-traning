@@ -12,11 +12,11 @@ public class Warehouse {
     private static Logger logger = LogManager.getLogger();
 
 
-    private Map<Long, FigureParameters> map;
+    private Map<Long, FigureParameter> map;
     private static Warehouse instance;
 
     public static Warehouse getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             logger.log(Level.INFO, "creating singleton warehouse");
             instance = new Warehouse();
         }
@@ -27,20 +27,20 @@ public class Warehouse {
         this.map = new HashMap<>();
     }
 
-    public FigureParameters get(Long id) {  //TODO return copy of map
+    public FigureParameter get(Long id) {  //TODO return copy of map
 
         return map.get(id);
     }
 
-    public Map<Long, FigureParameters> getMap() {
+    public Map<Long, FigureParameter> getMap() {
         return map;
     }
 
-    public FigureParameters put(Long id, FigureParameters value) {
+    public FigureParameter put(Long id, FigureParameter value) {
         return map.put(id, value);
     }
 
-    public FigureParameters remove(Long id) {
+    public FigureParameter remove(Long id) {
         return map.remove(id);
     }
 

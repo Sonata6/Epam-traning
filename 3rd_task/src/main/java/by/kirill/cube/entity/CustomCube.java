@@ -1,19 +1,24 @@
 package by.kirill.cube.entity;
 
 
+import by.kirill.cube.comparator.FieldXComparator;
+import by.kirill.cube.comparator.FieldYComparator;
+import by.kirill.cube.comparator.FieldZComparator;
+import by.kirill.cube.comparator.IdComparator;
 import by.kirill.cube.exception.CustomCubeException;
 import by.kirill.cube.observer.CustomCubeEvent;
 import by.kirill.cube.observer.Observable;
 import by.kirill.cube.observer.Observer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomCube extends Figure implements Observable {
 
 
     private CustomPoint firstPoint;
     private CustomPoint secondPoint;
-    private ArrayList<Observer> observers = new ArrayList<>();
+    private List<Observer> cubeObservers = new ArrayList<>();
 
 
     public CustomCube() {
@@ -58,23 +63,58 @@ public class CustomCube extends Figure implements Observable {
 
     @Override
     public void attach(Observer observer) {
-        observers.add(observer);
+        cubeObservers.add(observer);
     }
 
     @Override
     public void detach(Observer observer) {
-        observers.remove(observer);
+        cubeObservers.remove(observer);
     }
 
     @Override
-    public void notifyObservers() throws CustomCubeException {
+    public void notifyObservers() {
         CustomCubeEvent event = new CustomCubeEvent(this);
-        if (!observers.isEmpty()) {
-            for (Observer observer : observers) {
-                observer.updateSurfaceArea(event);
+        if (!cubeObservers.isEmpty()) {
+            for (Observer observer : cubeObservers) {
+                observer.updateArea(event);
                 observer.updateVolume(event);
             }
         }
+    }
+
+    public int compareFirstPointByX(CustomCube cube) {
+        FieldXComparator comparator = new FieldXComparator();
+        return comparator.compare(this.firstPoint, cube.getFirstPoint());
+    }
+
+    public int compareFirstPointByY(CustomCube cube) {
+        FieldYComparator comparator = new FieldYComparator();
+        return comparator.compare(this.firstPoint, cube.getFirstPoint());
+    }
+
+    public int compareFirstPointByZ(CustomCube cube) {
+        FieldZComparator comparator = new FieldZComparator();
+        return comparator.compare(this.firstPoint, cube.getFirstPoint());
+    }
+
+    public int compareSecondPointByX(CustomCube cube) {
+        FieldXComparator comparator = new FieldXComparator();
+        return comparator.compare(this.secondPoint, cube.getSecondPoint());
+    }
+
+    public int compareSecondPointByY(CustomCube cube) {
+        FieldYComparator comparator = new FieldYComparator();
+        return comparator.compare(this.secondPoint, cube.getSecondPoint());
+    }
+
+    public int compareSecondPointByZ(CustomCube cube) {
+        FieldZComparator comparator = new FieldZComparator();
+        return comparator.compare(this.secondPoint, cube.getSecondPoint());
+    }
+
+    public int compareById(CustomCube cube) {
+        IdComparator comparator = new IdComparator();
+        return comparator.compare(this, cube);
     }
 
     @Override
@@ -86,7 +126,10 @@ public class CustomCube extends Figure implements Observable {
             return false;
         }
         CustomCube that = (CustomCube) o;
-        return super.equals(firstPoint) && super.equals(secondPoint);
+        return (this.firstPoint.getX() == that.getFirstPoint().getX() && this.firstPoint.getY() ==
+                that.firstPoint.getY() && this.firstPoint.getZ() == that.firstPoint.getZ() &&
+                this.secondPoint.getX() == that.getSecondPoint().getX() && this.secondPoint.getY() ==
+                that.getSecondPoint().getY() && this.secondPoint.getZ() == that.getSecondPoint().getZ());
     }
 
     @Override

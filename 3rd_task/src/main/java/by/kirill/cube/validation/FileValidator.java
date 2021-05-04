@@ -1,7 +1,5 @@
 package by.kirill.cube.validation;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.regex.Pattern;
 
 public class FileValidator {
@@ -11,13 +9,6 @@ public class FileValidator {
     public static boolean
     validateString(String line) {
         boolean resultRegularPyramid = Pattern.matches(CORRECT_REGULAR_CUBE, line);
-        //boolean resultRegularPolygon = Pattern.matches(CORRECT_REGULAR_POLYGON, line);
         return resultRegularPyramid;
-        // || resultRegularPolygon;
     }
-
-//    public static boolean validateFilePath(Path path) {
-//        return !Files.notExists(path);
-//    }
-
 }

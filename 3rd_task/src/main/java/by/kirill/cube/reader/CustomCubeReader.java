@@ -1,7 +1,6 @@
 package by.kirill.cube.reader;
 
 import by.kirill.cube.exception.CustomCubeException;
-import by.kirill.cube.validation.CustomCubeValidator;
 import by.kirill.cube.validation.FileValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -19,8 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class CustomCubeReader
-{
+public class CustomCubeReader {
     private static Logger logger = LogManager.getLogger();
 
     public List<String> readFromFile(String filepath) throws CustomCubeException {
@@ -28,8 +26,9 @@ public class CustomCubeReader
         if (Files.notExists(path)) {
             logger.log(Level.ERROR, "File path problems");
             throw new CustomCubeException("No file found in this path");
-        };
-        List<String> correctLines  = new ArrayList<>();
+        }
+        ;
+        List<String> correctLines = new ArrayList<>();
         try (Stream<String> stream = Files.lines(path)) {
             correctLines = stream.filter(FileValidator::validateString).collect(Collectors.toList());
             if (correctLines == null) {
@@ -45,7 +44,7 @@ public class CustomCubeReader
     }
 
 
-    public Path createFilePath(String filePath) throws CustomCubeException {
+    private Path createFilePath(String filePath) throws CustomCubeException {
         URI uri;
         try {
             uri = getClass().getResource(filePath).toURI();
@@ -55,13 +54,7 @@ public class CustomCubeReader
         }
         String absolutePath = new File(uri).getAbsolutePath();
         Path path = Paths.get(absolutePath);
-        filePathCheck(path);
         return path;
     }
 
-    private void filePathCheck(Path path) throws CustomCubeException {
-        if (!FileValidator.validateFilePath(path)) {
-            throw new CustomCubeException("File by path: \'" + path.toString() + "\'is not exist");
-        }
-    }
 }

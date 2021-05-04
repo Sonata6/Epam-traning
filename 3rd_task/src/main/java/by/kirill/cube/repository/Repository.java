@@ -1,7 +1,6 @@
 package by.kirill.cube.repository;
 
 import by.kirill.cube.entity.CustomCube;
-import by.kirill.cube.exception.CustomCubeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,6 +29,7 @@ public class Repository {
         }
         return instance;
     }
+
     public List<CustomCube> getCustomCubes() {
         List<CustomCube> result = new ArrayList<>(customCubeList);
         return result;
@@ -51,6 +51,14 @@ public class Repository {
         return customCubeList.removeAll(cube);
     }
 
+    public void clear() {
+        customCubeList.clear();
+    }
+
+    public int size() {
+        return customCubeList.size();
+    }
+
     public CustomCube get(int index) {
         return customCubeList.get(index);
     }
@@ -69,7 +77,7 @@ public class Repository {
         return result;
     }
 
-    public List<CustomCube> queryStream(Specification specification) throws CustomCubeException {
+    public List<CustomCube> queryStream(Specification specification) {
         return customCubeList.stream().filter(specification::specify).collect(Collectors.toList());
     }
 

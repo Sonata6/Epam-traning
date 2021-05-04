@@ -1,8 +1,5 @@
 package by.kirill.cube.entity;
 
-
-import java.util.Objects;
-
 public class CustomPoint {
 
     private int x;

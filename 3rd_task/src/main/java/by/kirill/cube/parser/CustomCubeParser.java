@@ -27,7 +27,7 @@ public class CustomCubeParser {
             List<String> cubeCoordinatesStr = Stream.of(customCubeStr.split(SPACE)).collect(Collectors.toList());
             cubeCoordinates = new ArrayList<>();
             for (String s : cubeCoordinatesStr) cubeCoordinates.add(Integer.valueOf(s.replaceAll(",", "")));
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             throw new CustomCubeException("Wrong string in parser.");
         }
         return cubeCoordinates;
