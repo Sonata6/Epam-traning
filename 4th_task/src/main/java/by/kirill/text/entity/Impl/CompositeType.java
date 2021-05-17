@@ -1,6 +1,6 @@
 package by.kirill.text.entity.Impl;
 
-public enum TextComponentType {
+public enum CompositeType {
     PARAGRAPH(" "),
     SENTENCE(" "),
     LEXEME(""),
@@ -11,7 +11,7 @@ public enum TextComponentType {
 
     private final String delimiter;
 
-    TextComponentType(String delimiter) {
+    CompositeType(String delimiter) {
         this.delimiter = delimiter;
     }
 

@@ -9,19 +9,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-public class PunctuationLeaf implements Composite {
+public class PunctuationLeaf extends Composite {
 
     private static Logger logger = LogManager.getLogger();
     private char punctuation;
 
     public PunctuationLeaf(char punctuation) {
         this.punctuation = punctuation;
-    }
-
-    @Override
-    public void operation() {
-        logger.log(Level.ERROR, "Unsupported operation in PunctuationLeaf");
-        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -32,13 +26,13 @@ public class PunctuationLeaf implements Composite {
 
     @Override
     public void remove(Composite textComponent) {
-        logger.log(Level.WARNING, "Unsupported remove operation in PunctuationLeaf");
+        logger.log(Level.WARN, "Unsupported remove operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }
 
     @Override
     public Composite getChild(int index) {
-        logger.log(Level.WARNING, "Unsupported getChild operation in PunctuationLeaf");
+        logger.log(Level.WARN, "Unsupported getChild operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }
 
@@ -49,7 +43,7 @@ public class PunctuationLeaf implements Composite {
 
     @Override
     public Iterator<Composite> iterator() {
-        logger.log(Level.WARNING, "Unsupported operation in PunctuationLeaf");
+        logger.log(Level.WARN, "Unsupported operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }
 }

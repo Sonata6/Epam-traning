@@ -1,10 +1,14 @@
 package by.kirill.text.entity;
 
+import java.util.Iterator;
 import java.util.logging.Level;
 
-public interface Composite extends Iterable<Composite> {
-    void operation();
-    void add(Composite c);
-    void remove(Composite c);
-    Composite getChild(int index);
+public abstract class Composite implements Iterable<Composite> {
+
+    public abstract void add(Composite c);
+
+    public abstract void remove(Composite c);
+
+    public abstract Composite getChild(int index);
+
 }
