@@ -1,6 +1,6 @@
-package by.kirill.text.entity.Impl;
+package by.kirill.text.entity.impl;
 
-import by.kirill.text.entity.Composite;
+import by.kirill.text.entity.Component;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,46 +9,46 @@ import java.util.List;
 
 import org.apache.logging.log4j.Level;
 
-public class TextComposite extends Composite {
+public class TextComponent extends Component {
 
     private static Logger logger = LogManager.getLogger();
     private CompositeType compositeType;
-    private final List<Composite> composites = new ArrayList<>();
+    private final List<Component> components = new ArrayList<>();
 
-    public TextComposite(CompositeType compositeType) {
+    public TextComponent(CompositeType compositeType) {
         this.compositeType = compositeType;
     }
 
 
     @Override
-    public void add(Composite textComponent) {
+    public void add(Component textComponent) {
         logger.log(Level.INFO, "Composite -> adding child");
-        composites.add(textComponent);
+        components.add(textComponent);
     }
 
     @Override
-    public void remove(Composite textComponent) {
+    public void remove(Component textComponent) {
         logger.log(Level.INFO, "Composite -> deleting child");
-        composites.remove(textComponent);
+        components.remove(textComponent);
     }
 
     @Override
-    public Composite getChild(int index) {
+    public Component getChild(int index) {
         logger.log(Level.INFO, "Composite -> getting child by index {}", index);
-        return composites.get(index);
+        return components.get(index);
     }
 
     @Override
     public String toString() {
         String delimeter = compositeType.getDelimiter();
-        String[] stringComponents = composites.stream()
+        String[] stringComponents = components.stream()
                 .map(Object::toString)
                 .toArray(String[]::new);
         return String.join(delimeter, stringComponents);
     }
 
     @Override
-    public Iterator<Composite> iterator() {
+    public Iterator<Component> iterator() {
         return Collections.emptyIterator();
     }
 }
