@@ -1,34 +1,35 @@
 package by.kirill.text.entity.impl;
 
-import by.kirill.text.entity.Component;
+import by.kirill.text.entity.AbstractComponent;
 
 import java.util.Iterator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-public class SymbolLeaf extends Component {
+
+public class CharacterLeaf extends AbstractComponent {
 
     private static Logger logger = LogManager.getLogger();
     private char symbol;
 
-    public SymbolLeaf(char symbol) {
+    public CharacterLeaf(char symbol) {
         this.symbol = symbol;
     }
 
     @Override
-    public void add(Component textComponent) {
+    public void add(AbstractComponent textAbstractComponent) {
         logger.log(Level.WARN, "Unsupported add operation in SymbolLeaf");
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void remove(Component textComponent) {
+    public void remove(AbstractComponent textAbstractComponent) {
         logger.log(Level.WARN, "Unsupported remove operation in SymbolLeaf");
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public Component getChild(int index) {
+    public AbstractComponent getChild(int index) {
         logger.log(Level.WARN, "Unsupported getChild operation in SymbolLeaf");
         throw new UnsupportedOperationException();
     }
@@ -39,7 +40,7 @@ public class SymbolLeaf extends Component {
     }
 
     @Override
-    public Iterator<Component> iterator() {
+    public Iterator<AbstractComponent> iterator() {
         logger.log(Level.WARN,"Unsupported operation in SymbolLeaf");
         throw new UnsupportedOperationException();
     }

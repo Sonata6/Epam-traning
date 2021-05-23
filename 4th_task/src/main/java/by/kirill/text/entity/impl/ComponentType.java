@@ -1,17 +1,17 @@
 package by.kirill.text.entity.impl;
 
-public enum CompositeType {
+public enum ComponentType {
     PARAGRAPH(" "),
     SENTENCE(" "),
     LEXEME(""),
     WORD(""),
-    SYMBOL(""),
-    PUNCTUATION("");
+    CHARACTER("");
+    //PUNCTUATION("");
 
 
     private final String delimiter;
 
-    CompositeType(String delimiter) {
+    ComponentType(String delimiter) {
         this.delimiter = delimiter;
     }
 

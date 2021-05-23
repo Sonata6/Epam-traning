@@ -1,6 +1,6 @@
 package by.kirill.text.parser.impl;
 
-import by.kirill.text.entity.impl.CompositeType;
+import by.kirill.text.entity.impl.ComponentType;
 import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
 import by.kirill.text.parser.Chain;
@@ -22,7 +22,7 @@ public class WordParser implements Chain{
         @Override
         public TextComposite parse(String data) throws TextHandlerException {
             List<String> wordList = TextHandler.handleText(data, WORD_REGEX);
-            TextComposite wordTextComposite = new TextComposite(CompositeType.WORD);
+            TextComposite wordTextComposite = new TextComposite(ComponentType.WORD);
             for (String word : wordList) {
                 TextComposite nextTextComposite = nextChain.parse(word);
                 wordTextComposite.add(nextTextComposite);

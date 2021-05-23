@@ -1,6 +1,6 @@
 package by.kirill.text.entity.impl;
 
-import by.kirill.text.entity.Component;
+import by.kirill.text.entity.AbstractComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,46 +9,53 @@ import java.util.List;
 
 import org.apache.logging.log4j.Level;
 
-public class TextComposite extends Component {
+public class TextComposite extends AbstractComponent {
 
     private static Logger logger = LogManager.getLogger();
-    private CompositeType compositeType;
-    private final List<Component> components = new ArrayList<>();
+    private List<AbstractComponent> abstractComponents = new ArrayList<>();
 
-    public TextComposite(CompositeType compositeType) {
-        this.compositeType = compositeType;
+    public TextComposite(ComponentType componentType) {
+        this.componentType = componentType;
     }
 
+    public void setComponents(List<AbstractComponent> components) {
+        this.abstractComponents = new ArrayList<>(components);
+    }
+
+    public int getNumberOfComponents() {
+        logger.log(Level.INFO, "Number of components:" + abstractComponents.size());
+        return abstractComponents.size();
+    }
 
     @Override
-    public void add(Component textComponent) {
+    public void add(AbstractComponent textAbstractComponent) {
         logger.log(Level.INFO, "Composite -> adding child");
-        components.add(textComponent);
+        abstractComponents.add(textAbstractComponent);
     }
 
     @Override
-    public void remove(Component textComponent) {
+    public void remove(AbstractComponent textAbstractComponent) {
         logger.log(Level.INFO, "Composite -> deleting child");
-        components.remove(textComponent);
+        abstractComponents.remove(textAbstractComponent);
     }
 
     @Override
-    public Component getChild(int index) {
+    public AbstractComponent getChild(int index) {
         logger.log(Level.INFO, "Composite -> getting child by index {}", index);
-        return components.get(index);
+        return abstractComponents.get(index);
     }
 
     @Override
     public String toString() {
-        String delimeter = compositeType.getDelimiter();
-        String[] stringComponents = components.stream()
+        String delimeter = componentType.getDelimiter();
+        String[] stringComponents = abstractComponents.stream()
                 .map(Object::toString)
                 .toArray(String[]::new);
         return String.join(delimeter, stringComponents);
     }
 
     @Override
-    public Iterator<Component> iterator() {
+    public Iterator<AbstractComponent> iterator() {
         return Collections.emptyIterator();
     }
 }
