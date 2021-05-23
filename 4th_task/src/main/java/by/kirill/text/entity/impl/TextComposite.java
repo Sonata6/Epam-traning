@@ -9,13 +9,13 @@ import java.util.List;
 
 import org.apache.logging.log4j.Level;
 
-public class TextComponent extends Component {
+public class TextComposite extends Component {
 
     private static Logger logger = LogManager.getLogger();
     private CompositeType compositeType;
     private final List<Component> components = new ArrayList<>();
 
-    public TextComponent(CompositeType compositeType) {
+    public TextComposite(CompositeType compositeType) {
         this.compositeType = compositeType;
     }
 

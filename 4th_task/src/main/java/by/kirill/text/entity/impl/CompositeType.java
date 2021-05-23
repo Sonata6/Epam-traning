@@ -1,4 +1,4 @@
-package by.kirill.text.entity.Impl;
+package by.kirill.text.entity.impl;
 
 public enum CompositeType {
     PARAGRAPH(" "),

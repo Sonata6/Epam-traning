@@ -1,4 +1,4 @@
-package by.kirill.text.exeption;
+package by.kirill.text.exception;
 
 public class TextHandlerException extends Exception {
     public TextHandlerException() {

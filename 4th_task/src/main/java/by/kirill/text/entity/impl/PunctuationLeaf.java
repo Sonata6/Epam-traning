@@ -1,6 +1,6 @@
-package by.kirill.text.entity.Impl;
+package by.kirill.text.entity.impl;
 
-import by.kirill.text.entity.Composite;
+import by.kirill.text.entity.Component;
 
 import java.util.Iterator;
 
@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-public class PunctuationLeaf extends Composite {
+public class PunctuationLeaf extends Component {
 
     private static Logger logger = LogManager.getLogger();
     private char punctuation;
@@ -19,19 +19,19 @@ public class PunctuationLeaf extends Composite {
     }
 
     @Override
-    public void add(Composite textComponent) {
+    public void add(Component textComponent) {
         logger.log(Level.WARN, "Unsupported add operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public void remove(Composite textComponent) {
+    public void remove(Component textComponent) {
         logger.log(Level.WARN, "Unsupported remove operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public Composite getChild(int index) {
+    public Component getChild(int index) {
         logger.log(Level.WARN, "Unsupported getChild operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }
@@ -42,7 +42,7 @@ public class PunctuationLeaf extends Composite {
     }
 
     @Override
-    public Iterator<Composite> iterator() {
+    public Iterator<Component> iterator() {
         logger.log(Level.WARN, "Unsupported operation in PunctuationLeaf");
         throw new UnsupportedOperationException();
     }

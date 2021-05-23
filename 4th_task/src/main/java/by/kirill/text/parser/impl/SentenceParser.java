@@ -1,8 +1,8 @@
-package by.kirill.text.parser.Impl;
+package by.kirill.text.parser.impl;
 
-import by.kirill.text.entity.Impl.CompositeType;
-import by.kirill.text.entity.Impl.TextComposite;
-import by.kirill.text.exeption.TextHandlerException;
+import by.kirill.text.entity.impl.CompositeType;
+import by.kirill.text.entity.impl.TextComposite;
+import by.kirill.text.exception.TextHandlerException;
 import by.kirill.text.parser.Chain;
 import by.kirill.text.parser.TextHandler;
 
@@ -10,21 +10,21 @@ import java.util.List;
 
 public class SentenceParser implements Chain {
 
-    private final String REGEX = "/([А-ЯA-Z]((!=|ob.)|[^?!.(]|\\([^)]*\\))*[.?!]{1,3})/gm";
-    private Chain currentChain;
+    private final String SENTENCE_REGEX = "\\s+[A-Za-z\\s-(),0-9<>~&|^']+\\.\\n?";
+    private Chain nextChain;
 
     @Override
     public void setNextChain(Chain nextChain) {
 
-        currentChain.setNextChain(nextChain);
+        this.nextChain.setNextChain(nextChain);
     }
 
     @Override
     public TextComposite parse(String data) throws TextHandlerException {
-        List<String> sentenceList = TextHandler.handleText(data, REGEX);
+        List<String> sentenceList = TextHandler.handleText(data, SENTENCE_REGEX);
         TextComposite sentenceTextComposite = new TextComposite(CompositeType.SENTENCE);
         for (String sentence : sentenceList) {
-            TextComposite nextTextComposite = currentChain.parse(sentence);
+            TextComposite nextTextComposite = nextChain.parse(sentence);
             sentenceTextComposite.add(nextTextComposite);
         }
         return sentenceTextComposite;

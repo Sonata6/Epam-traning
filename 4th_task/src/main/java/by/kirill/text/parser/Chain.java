@@ -1,8 +1,7 @@
 package by.kirill.text.parser;
 
-import by.kirill.text.entity.Composite;
-import by.kirill.text.entity.Impl.TextComposite;
-import by.kirill.text.exeption.TextHandlerException;
+import by.kirill.text.entity.impl.TextComposite;
+import by.kirill.text.exception.TextHandlerException;
 
 public interface Chain {
 

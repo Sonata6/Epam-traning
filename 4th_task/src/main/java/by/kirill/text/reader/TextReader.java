@@ -1,6 +1,6 @@
 package by.kirill.text.reader;
 
-import by.kirill.text.exeption.TextHandlerException;
+import by.kirill.text.exception.TextHandlerException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
