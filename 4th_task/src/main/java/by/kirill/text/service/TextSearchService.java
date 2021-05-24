@@ -2,6 +2,7 @@ package by.kirill.text.service;
 
 import by.kirill.text.entity.AbstractComponent;
 import by.kirill.text.entity.impl.ComponentType;
+import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class TextSearchService {
                 currentSentence++;
             }
             if (componentType == ComponentType.WORD) {
-                int currentLength = calculationService.calculateWordLength(component);
+                int currentLength = calculationService.calculateWordLength((TextComposite) component);
                 if (currentLength > maxWord) {
                     maxWord = currentLength;
                     sentenceNumber = new ArrayList<>();
