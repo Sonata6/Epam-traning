@@ -4,6 +4,7 @@ import by.kirill.text.entity.AbstractComponent;
 import by.kirill.text.entity.impl.ComponentType;
 import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
+import jdk.jshell.spi.ExecutionControl;
 
 import java.util.List;
 import java.util.regex.Pattern;
@@ -47,12 +48,12 @@ public class TextCalculateService {
         return wordsCount;
     }
 
-    public int calculateVowelCount(AbstractComponent component) {
+    public int calculateVowelCount(AbstractComponent component) throws ExecutionControl.NotImplementedException {
         TextSearchService searchService = new TextSearchService();
-        List<AbstractComponent> letters = searchService.findAllLetters(component);
+        List<AbstractComponent> characters = searchService.findAllCharacters(component);
         int vowelCount = 0;
-        for (AbstractComponent letterComponent: letters) {
-            String stringToSearch = Character.toString(letterComponent.getContent());
+        for (AbstractComponent characterComponent: characters) {
+            String stringToSearch = Character.toString(characterComponent.getCharacter());
             if (Pattern.matches(VOWEL, stringToSearch)) {
                 vowelCount++;
             }

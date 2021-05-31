@@ -66,4 +66,16 @@ public class TextSearchService {
         }
         return sentenceNumber;
     }
+
+    public List<AbstractComponent> findAllLetters(AbstractComponent textComposite) {
+        List<AbstractComponent> letters = new ArrayList<>();
+        for (AbstractComponent component: textComposite) {
+            ComponentType componentType = component.getComponentType();
+            if (componentType == ComponentType.CHARACTER) {
+                letters.add(component);
+            }
+        }
+        return letters;
+    }
+
 }

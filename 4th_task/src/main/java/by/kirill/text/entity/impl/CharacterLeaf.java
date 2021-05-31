@@ -3,6 +3,8 @@ package by.kirill.text.entity.impl;
 import by.kirill.text.entity.AbstractComponent;
 
 import java.util.Iterator;
+import java.util.List;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,10 +12,19 @@ import org.apache.logging.log4j.Logger;
 public class CharacterLeaf extends AbstractComponent {
 
     private static Logger logger = LogManager.getLogger();
-    private char symbol;
+    private char character;
 
-    public CharacterLeaf(char symbol) {
-        this.symbol = symbol;
+    public CharacterLeaf(char character) {
+        this.character = character;
+    }
+
+    public char getCharacter() {
+        return character;
+    }
+
+    @Override
+    public void addAllToList(List<AbstractComponent> abstractComponents) {
+        abstractComponents.add(this);
     }
 
     @Override
@@ -36,7 +47,7 @@ public class CharacterLeaf extends AbstractComponent {
 
     @Override
     public String toString() {
-        return String.valueOf(symbol);
+        return String.valueOf(character);
     }
 
     @Override

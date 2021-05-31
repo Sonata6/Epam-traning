@@ -3,20 +3,20 @@ package by.kirill.text.parser.impl;
 import by.kirill.text.entity.impl.ComponentType;
 import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
-import by.kirill.text.parser.Chain;
+import by.kirill.text.parser.BaseParser;
 import by.kirill.text.parser.TextHandler;
 
 import java.util.List;
 
-public class WordParser implements Chain{
+public class WordParser implements BaseParser {
 
         private final String WORD_REGEX = "^[A-Za-z]+$";
-        private Chain nextChain;
+        private BaseParser nextBaseParser;
 
         @Override
-        public void setNextChain(Chain nextChain) {
+        public void setNextChain(BaseParser nextBaseParser) {
 
-            this.nextChain.setNextChain(nextChain);
+            this.nextBaseParser.setNextChain(nextBaseParser);
         }
 
         @Override
@@ -24,7 +24,7 @@ public class WordParser implements Chain{
             List<String> wordList = TextHandler.handleText(data, WORD_REGEX);
             TextComposite wordTextComposite = new TextComposite(ComponentType.WORD);
             for (String word : wordList) {
-                TextComposite nextTextComposite = nextChain.parse(word);
+                TextComposite nextTextComposite = nextBaseParser.parse(word);
                 wordTextComposite.add(nextTextComposite);
             }
             return wordTextComposite;

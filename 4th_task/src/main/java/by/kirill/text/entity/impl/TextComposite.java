@@ -1,6 +1,7 @@
 package by.kirill.text.entity.impl;
 
 import by.kirill.text.entity.AbstractComponent;
+import jdk.jshell.spi.ExecutionControl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -46,6 +47,11 @@ public class TextComposite extends AbstractComponent {
     }
 
     @Override
+    public char getCharacter() throws ExecutionControl.NotImplementedException {
+        throw new ExecutionControl.NotImplementedException("Not implemented");
+    }
+
+    @Override
     public String toString() {
         String delimeter = componentType.getDelimiter();
         String[] stringComponents = abstractComponents.stream()
@@ -55,7 +61,7 @@ public class TextComposite extends AbstractComponent {
     }
 
     @Override
-    public Iterator<AbstractComponent> iterator() {
-        return Collections.emptyIterator();
+    public void addAllToList(List<AbstractComponent> abstractComponents) {
+        abstractComponents.add(this);
     }
 }

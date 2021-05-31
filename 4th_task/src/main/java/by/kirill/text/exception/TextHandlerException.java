@@ -1,6 +1,7 @@
 package by.kirill.text.exception;
 
 public class TextHandlerException extends Exception {
+
     public TextHandlerException() {
         super();
     }

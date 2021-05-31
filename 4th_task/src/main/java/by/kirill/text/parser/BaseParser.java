@@ -3,9 +3,9 @@ package by.kirill.text.parser;
 import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
 
-public interface Chain {
+public interface BaseParser {
 
-    void setNextChain(Chain nextChain);
+    void setNextChain(BaseParser nextBaseParser);
 
     TextComposite parse(String data) throws TextHandlerException;
 

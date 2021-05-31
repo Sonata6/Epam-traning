@@ -3,19 +3,19 @@ package by.kirill.text.parser.impl;
 import by.kirill.text.entity.impl.ComponentType;
 import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
-import by.kirill.text.parser.Chain;
+import by.kirill.text.parser.BaseParser;
 import by.kirill.text.parser.TextHandler;
 
 import java.util.List;
 
-public class ParagraphParser implements Chain {
+public class ParagraphParser implements BaseParser {
     private final String PARAGRAPH_REGEX = "\\t[^\\t]*";
-    private Chain nextChain;
+    private BaseParser nextBaseParser;
 
     @Override
-    public void setNextChain(Chain nextChain) {
+    public void setNextChain(BaseParser nextBaseParser) {
 
-        this.nextChain.setNextChain(nextChain);
+        this.nextBaseParser.setNextChain(nextBaseParser);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class ParagraphParser implements Chain {
         List<String> paragraphList = TextHandler.handleText(data, PARAGRAPH_REGEX);
         TextComposite paragraphTextComposite = new TextComposite(ComponentType.PARAGRAPH);
         for (String paragraph : paragraphList) {
-            TextComposite nextTextComposite = nextChain.parse(paragraph);
+            TextComposite nextTextComposite = nextBaseParser.parse(paragraph);
             paragraphTextComposite.add(nextTextComposite);
         }
         return paragraphTextComposite;

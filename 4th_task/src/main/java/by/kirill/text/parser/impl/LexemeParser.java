@@ -3,19 +3,19 @@ package by.kirill.text.parser.impl;
 import by.kirill.text.entity.impl.ComponentType;
 import by.kirill.text.entity.impl.TextComposite;
 import by.kirill.text.exception.TextHandlerException;
-import by.kirill.text.parser.Chain;
+import by.kirill.text.parser.BaseParser;
 import by.kirill.text.parser.TextHandler;
 
 import java.util.List;
 
-public class LexemeParser implements Chain{
+public class LexemeParser implements BaseParser {
     private final String LEXEME_REGEX = "[\\S]+[\\s]?";
-    private Chain nextChain;
+    private BaseParser nextBaseParser;
 
     @Override
-    public void setNextChain(Chain nextChain) {
+    public void setNextChain(BaseParser nextBaseParser) {
 
-        this.nextChain.setNextChain(nextChain);
+        this.nextBaseParser.setNextChain(nextBaseParser);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class LexemeParser implements Chain{
         List<String> lexemeList = TextHandler.handleText(data, LEXEME_REGEX);
         TextComposite lexemeTextComposite = new TextComposite(ComponentType.LEXEME);
         for (String lexeme : lexemeList) {
-            TextComposite nextTextComposite = nextChain.parse(lexeme);
+            TextComposite nextTextComposite = nextBaseParser.parse(lexeme);
             lexemeTextComposite.add(nextTextComposite);
         }
         return lexemeTextComposite;
