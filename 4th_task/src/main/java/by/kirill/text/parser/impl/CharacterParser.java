@@ -16,6 +16,7 @@ public class CharacterParser implements BaseParser {
     private BaseParser nextBaseParser;
     private final String CHARACTER_CHAIN = "[\\s\\S]";
     private static Logger logger = LogManager.getRootLogger();
+
     @Override
     public void setNextChain(BaseParser nextBaseParser) {
         logger.log(Level.INFO, "This is last element of chain");

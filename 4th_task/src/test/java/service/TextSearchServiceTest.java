@@ -47,7 +47,7 @@ public class TextSearchServiceTest {
     public void findSentencesWithLongestWord() throws TextHandlerException {
         TextSearchService searchService = new TextSearchService();
         List<Integer> actual = searchService.findSentencesWithLongestWord((TextComposite) rootComponent);
-        List<Integer> expected = new ArrayList<>(Arrays.asList(new Integer[] {2}));
-        Assert.assertEquals(actual.get(0), (Integer)8);
+        List<Integer> expected = new ArrayList<>(Arrays.asList(new Integer[]{2}));
+        Assert.assertEquals(actual.get(0), (Integer) 8);
     }
 }

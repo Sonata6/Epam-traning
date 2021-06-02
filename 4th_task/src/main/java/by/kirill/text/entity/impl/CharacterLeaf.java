@@ -52,7 +52,7 @@ public class CharacterLeaf extends AbstractComponent {
 
     @Override
     public Iterator<AbstractComponent> iterator() {
-        logger.log(Level.WARN,"Unsupported operation in SymbolLeaf");
+        logger.log(Level.WARN, "Unsupported operation in SymbolLeaf");
         throw new UnsupportedOperationException();
     }
 }

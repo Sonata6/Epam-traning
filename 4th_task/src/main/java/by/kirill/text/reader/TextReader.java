@@ -12,6 +12,7 @@ import java.nio.file.Paths;
 
 public class TextReader {
     private static Logger logger = LogManager.getLogger();
+
     public String readTextFromFile(String path) throws TextHandlerException {
         String text;
         try {

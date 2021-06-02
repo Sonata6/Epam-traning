@@ -38,7 +38,7 @@ public class TextCalculateService {
         TextSearchService searchService = new TextSearchService();
         List<AbstractComponent> words = searchService.findAllWords(textComposite);
         int wordsCount = 0;
-        for (AbstractComponent word: words) {
+        for (AbstractComponent word : words) {
             String word1 = word.toString().toLowerCase();
             String word2 = wordToSearch.toLowerCase();
             if (word1.equals(word2)) {
@@ -52,7 +52,7 @@ public class TextCalculateService {
         TextSearchService searchService = new TextSearchService();
         List<AbstractComponent> characters = searchService.findAllCharacters(component);
         int vowelCount = 0;
-        for (AbstractComponent characterComponent: characters) {
+        for (AbstractComponent characterComponent : characters) {
             String stringToSearch = Character.toString(characterComponent.getCharacter());
             if (Pattern.matches(VOWEL, stringToSearch)) {
                 vowelCount++;

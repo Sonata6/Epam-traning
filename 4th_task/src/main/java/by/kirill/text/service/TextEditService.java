@@ -13,7 +13,7 @@ public class TextEditService {
         TextSearchService textSearchServiceImpl = new TextSearchService();
         List<AbstractComponent> sentences = textSearchServiceImpl.findAllSentences(textComposite);
 
-        for (AbstractComponent sentence: sentences) {
+        for (AbstractComponent sentence : sentences) {
             List<AbstractComponent> words = textSearchServiceImpl.findAllWords(sentence);
             if (words.size() < wordCount) {
                 sentence.remove(sentence);

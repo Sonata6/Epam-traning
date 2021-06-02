@@ -10,23 +10,23 @@ import java.util.List;
 
 public class WordParser implements BaseParser {
 
-        private final String WORD_REGEX = "^[A-Za-z]+$";
-        private BaseParser nextBaseParser;
+    private final String WORD_REGEX = "^[A-Za-z]+$";
+    private BaseParser nextBaseParser;
 
-        @Override
-        public void setNextChain(BaseParser nextBaseParser) {
+    @Override
+    public void setNextChain(BaseParser nextBaseParser) {
 
-            this.nextBaseParser.setNextChain(nextBaseParser);
+        this.nextBaseParser.setNextChain(nextBaseParser);
+    }
+
+    @Override
+    public TextComposite parse(String data) throws TextHandlerException {
+        List<String> wordList = TextHandler.handleText(data, WORD_REGEX);
+        TextComposite wordTextComposite = new TextComposite(ComponentType.WORD);
+        for (String word : wordList) {
+            TextComposite nextTextComposite = nextBaseParser.parse(word);
+            wordTextComposite.add(nextTextComposite);
         }
-
-        @Override
-        public TextComposite parse(String data) throws TextHandlerException {
-            List<String> wordList = TextHandler.handleText(data, WORD_REGEX);
-            TextComposite wordTextComposite = new TextComposite(ComponentType.WORD);
-            for (String word : wordList) {
-                TextComposite nextTextComposite = nextBaseParser.parse(word);
-                wordTextComposite.add(nextTextComposite);
-            }
-            return wordTextComposite;
-        }
+        return wordTextComposite;
+    }
 }
